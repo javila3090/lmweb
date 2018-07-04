@@ -10,11 +10,11 @@
 
   <title>Lipocero</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,300,700,800" rel="stylesheet" media="screen">
 
-  <!-- Custom styles for this template -->
-  <link href="css/modern-business.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="css/app.css" rel="stylesheet" media="screen">
+  <link href="color/default.css" rel="stylesheet" media="screen">
 
 </head>
 
@@ -27,7 +27,7 @@
   @include('partials.banner')
 
   <!-- Page Content -->
-  <div class="container">
+  <div class="">
 
     @section('content')
     @show
@@ -39,24 +39,23 @@
   @include('partials.footer')
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script type="text/javascript">
-    var $document = $(document),
-    $element = $('#navbar');
+  <!-- js -->
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/mb.bgndGallery.js"></script>
+  <script src="js/mb.bgndGallery.effects.js"></script>
+  <script src="js/jquery.simple-text-rotator.min.js"></script>
+  <script src="js/jquery.scrollTo.min.js"></script>
+  <script src="js/jquery.nav.js"></script>
+  <script src="js/modernizr.custom.js"></script>
+  <script src="js/grid.js"></script>
+  <script src="js/stellar.js"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
 
-    $document.scroll(function() {
-      if ($document.scrollTop() >= 20) {
-        $element.stop().css({
-          top: '0px'
-        });
-      } else {
-        $element.stop().css({
-          top: '-200px'
-        });
-      }
-    });
-  </script>
+  <!-- Template Custom Javascript File -->
+  <script src="js/custom.js"></script>
 
 </body>
 
