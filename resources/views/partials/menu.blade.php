@@ -15,7 +15,7 @@
     </div>
     <div class="navigation collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav">
-        <li class="current"><a href="#intro">Inicio</a></li>
+        <li class="current"><a href="#carousel-example-generic2">Inicio</a></li>
         <li><a href="#about">Nosotros</a></li>
         <li><a href="#services">Servicios</a></li>
         <li><a href="#portfolio">Promociones</a></li>

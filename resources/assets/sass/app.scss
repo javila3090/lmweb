@@ -21,9 +21,40 @@ Imports
 General
 ================================= */
 
+@font-face {
+  font-family: 'Josefin Sans Light';
+  src: url(/fonts/JosefinSans-Light.ttf);
+}
+
+@font-face {
+  font-family: 'Josefin Sans Regular';
+  src: url(/fonts/JosefinSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Josefin Sans SemiBold';
+  src: url(/fonts/JosefinSans-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: 'Josefin Sans Bold';
+  src: url(/fonts/JosefinSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Merienda Bold';
+  src: url(/fonts/Merienda-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Merienda Regular';
+  src: url(/fonts/Merienda-Regular.ttf);
+}
+
+
 body{
 	text-align: center;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Josefin Sans Regular', sans-serif;
 	font-size: 14px;
 	line-height: 1.6em;
 }
@@ -50,7 +81,61 @@ h6 {
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 	font-weight: 700;
 	margin-bottom: 20px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Merienda Regular', sans-serif;
+}
+
+/* Tamaño Fuentes
+------------------------------------------------------------------ */
+.size-48px {
+  font-size: $size-48 !important;
+}
+.size-40px {
+  font-size: $size-40 !important;
+}
+.size-38px {
+  font-size: $size-38 !important;
+}
+.size-36px {
+  font-size: $size-36 !important;
+}
+.size-34px {
+  font-size: $size-34 !important;
+}
+.size-32px {
+  font-size: $size-32 !important;
+}
+.size-30px {
+  font-size: $size-30 !important;
+}
+.size-28px {
+  font-size: $size-28 !important;
+}
+.size-26px {
+  font-size: $size-26 !important;
+}
+.size-24px {
+  font-size: $size-24 !important;
+}
+.size-22px {
+  font-size: $size-22 !important;
+}
+.size-20px {
+  font-size: $size-20 !important;
+}
+.size-18px {
+  font-size: $size-18 !important;
+}
+.size-16px {
+  font-size: $size-16 !important;
+}
+.size-14px {
+  font-size: $size-14 !important;
+}
+.size-12px {
+  font-size: $size-12 !important;
+}
+.size-10px {
+  font-size: $size-10 !important;
 }
 
 .lead{
@@ -269,12 +354,14 @@ h1,h2,h3,h4 {
 }
 
 .super-heading {
-    font-size: 70px; 
+    font-size: 70px;
+    font-family: 'Merienda Bold' !important;
 }
 
 
 .super-paragraph {
     font-size: 30px; font-weight: 300;
+    font-family: 'Merienda Regular' !important;
 }
 
 .carousel-caption .super-paragraph a,
@@ -343,7 +430,8 @@ Parallax
 ============================= */
 
 #parallax1{
-	background-image: url(/img/parallax/1.jpg);
+	background-image: url(/img/banner-interno.jpg);
+	color: #007bff !important;
 }
 #parallax2{
 	background-image: url(/img/parallax/2.jpg);

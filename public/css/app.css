@@ -1,4 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);/* ================================
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@charset "UTF-8";
+
+/* ================================
 Imports
 ================================= */
 
@@ -5858,9 +5860,39 @@ a.btn,
 General
 ================================= */
 
+@font-face {
+  font-family: 'Josefin Sans Light';
+  src: url(/fonts/JosefinSans-Light.ttf);
+}
+
+@font-face {
+  font-family: 'Josefin Sans Regular';
+  src: url(/fonts/JosefinSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Josefin Sans SemiBold';
+  src: url(/fonts/JosefinSans-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: 'Josefin Sans Bold';
+  src: url(/fonts/JosefinSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Merienda Bold';
+  src: url(/fonts/Merienda-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Merienda Regular';
+  src: url(/fonts/Merienda-Regular.ttf);
+}
+
 body {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Josefin Sans Regular', sans-serif;
   font-size: 14px;
   line-height: 1.6em;
 }
@@ -5903,7 +5935,78 @@ h6,
 .h6 {
   font-weight: 700;
   margin-bottom: 20px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Merienda Regular', sans-serif;
+}
+
+/* Tamaño Fuentes
+------------------------------------------------------------------ */
+
+.size-48px {
+  font-size: 48px !important;
+}
+
+.size-40px {
+  font-size: 40px !important;
+}
+
+.size-38px {
+  font-size: 38px !important;
+}
+
+.size-36px {
+  font-size: 36px !important;
+}
+
+.size-34px {
+  font-size: 34px !important;
+}
+
+.size-32px {
+  font-size: 32px !important;
+}
+
+.size-30px {
+  font-size: 30px !important;
+}
+
+.size-28px {
+  font-size: 28px !important;
+}
+
+.size-26px {
+  font-size: 26px !important;
+}
+
+.size-24px {
+  font-size: 24px !important;
+}
+
+.size-22px {
+  font-size: 22px !important;
+}
+
+.size-20px {
+  font-size: 20px !important;
+}
+
+.size-18px {
+  font-size: 18px !important;
+}
+
+.size-16px {
+  font-size: 16px !important;
+}
+
+.size-14px {
+  font-size: 14px !important;
+}
+
+.size-12px {
+  font-size: 12px !important;
+}
+
+.size-10px {
+  font-size: 10px !important;
 }
 
 .lead {
@@ -6135,11 +6238,13 @@ h4 {
 
 .super-heading {
   font-size: 70px;
+  font-family: 'Merienda Bold' !important;
 }
 
 .super-paragraph {
   font-size: 30px;
   font-weight: 300;
+  font-family: 'Merienda Regular' !important;
 }
 
 .carousel-caption .super-paragraph a,
@@ -6211,7 +6316,8 @@ Parallax
 ============================= */
 
 #parallax1 {
-  background-image: url(/img/parallax/1.jpg);
+  background-image: url(/img/banner-interno.jpg);
+  color: #007bff !important;
 }
 
 #parallax2 {

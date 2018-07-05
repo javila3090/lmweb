@@ -1,62 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 3 | Log in</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Lipocero</title>
-
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,300,700,800" rel="stylesheet" media="screen">
-
-  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-  <link href="css/app.css" rel="stylesheet" media="screen">
-  <link href="color/default.css" rel="stylesheet" media="screen">
-
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{asset('adminlte/css/adminlte.min.css')}}">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="{{asset('adminlte/plugins/iCheck/square/blue.css')}}">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-
-<body >
-
-  <!-- Menú -->
-  @include('partials.menu')
-
-  <!-- Banner -->
-  @include('partials.banner')
-
-  <!-- Page Content -->
-  <div class="">
+<body class="hold-transition login-page">
 
     @section('content')
     @show
 
-  </div>
-  <!-- /.container -->
-
-  <!-- Footer -->
-  @include('partials.footer')
-
-  <!-- Bootstrap core JavaScript -->
-  <!-- js -->
-  <script src="js/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/wow.min.js"></script>
-  <script src="js/mb.bgndGallery.js"></script>
-  <script src="js/mb.bgndGallery.effects.js"></script>
-  <script src="js/jquery.simple-text-rotator.min.js"></script>
-  <script src="js/jquery.scrollTo.min.js"></script>
-  <script src="js/jquery.nav.js"></script>
-  <script src="js/modernizr.custom.js"></script>
-  <script src="js/grid.js"></script>
-  <script src="js/stellar.js"></script>
-  <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
-
-  <!-- Template Custom Javascript File -->
-  <script src="js/custom.js"></script>
-
+<!-- jQuery -->
+<script src="{{asset('adminlte/plugins/jquery/jquery.min.js')}}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- iCheck -->
+<script src="{{asset('adminlte/plugins/iCheck/icheck.min.js')}}"></script>
+<script>
+  $(function () {
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass   : 'iradio_square-blue',
+      increaseArea : '20%' // optional
+    })
+  })
+</script>
 </body>
-
 </html>
