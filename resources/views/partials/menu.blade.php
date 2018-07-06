@@ -18,8 +18,8 @@
         <li class="current"><a href="#carousel-example-generic2">Inicio</a></li>
         <li><a href="#about">Nosotros</a></li>
         <li><a href="#services">Servicios</a></li>
-        <li><a href="#portfolio">Promociones</a></li>
-        <li><a href="#team">Galería</a></li>
+        <li><a href="#promotions">Promociones</a></li>
+        <li><a href="#gallery">Galería</a></li>
         <li><a href="#contact">Contacto</a></li>
       </ul>
     </div>

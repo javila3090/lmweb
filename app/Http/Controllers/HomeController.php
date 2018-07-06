@@ -11,12 +11,17 @@ use App\CompanyInfo;
 class HomeController extends Controller
 {
     public function index(){
+
         $homeBanners = Banner::where('banner_type_id',1)->get();
-        $servicesBanners = Banner::where('banner_type_id',2)->limit(3)->get();
-        $services = Section::where('section_type_id',2)->first();
         $aboutUs = Section::where('section_type_id',1)->first();
+        $servicesBanners = Banner::where('banner_type_id',2)->get();
+        $services = Section::where('section_type_id',2)->first();
         $contact = Section::where('section_type_id',3)->first();
+        $galleryBanners = Banner::where('banner_type_id',3)->get();
+        $gallery = Section::where('section_type_id',4)->first();
         $companyInfo = CompanyInfo::orderBy('created_at', 'desc')->first();
+
+        //Mapa
 
         $config = array();
         $config['center'] = '-33.434844,-70.626295';
@@ -36,6 +41,6 @@ class HomeController extends Controller
             $map = app('map')->create_map();
             $map = array('map_js' => $map['js'], 'map_html' => $map['html']);
 
-            return view('welcome',compact('homeBanners','aboutUs','servicesBanners','services','companyInfo','contact','map'));
+            return view('welcome',compact('homeBanners','aboutUs','servicesBanners','services','companyInfo','contact','gallery','galleryBanners','map'));
         }
     }

@@ -3,12 +3,12 @@
 @section('content')
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Lipocero</b>Admin</a>
+    <img class="img" src="{{asset('img/logo.png')}}" width="200">
   </div>
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Iniciar sesión</p>
+      <p class="login-box-msg" style="text-transform: uppercase;"><b>Iniciar sesión</b></p>
 
        <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
         {{ csrf_field() }}

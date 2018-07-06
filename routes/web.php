@@ -15,16 +15,29 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/admin', 'AdminController@index')->name('admin');
 
-/*** Banner ***/
-Route::get('/admin/banner', 'BannerController@index')->name('banner');
-Route::get('/admin/banner/add', 'BannerController@create')->name('add_banner');
-Route::post('/admin/banner/store', 'BannerController@store')->name('store_banner');
-Route::get('/admin/banner/edit/{id}',['as'=>'edit_banner', 'uses' => 'BannerController@edit']);
-Route::post('/admin/banner/update',['as'=>'update_banner', 'uses' => 'BannerController@update']);
+Route::middleware(['auth'])->prefix('admin')->group(function () {
 
-/*** Section ***/
-Route::get('/admin/section', 'SectionController@index')->name('section');
-Route::get('/admin/section/add', 'SectionController@create')->name('add_section');
-Route::post('/admin/section/store', 'SectionController@store')->name('store_section');
+	/*** Banners ***/
+	Route::get('banner', 'BannerController@index')->name('banner');
+	Route::get('banner/add', 'BannerController@create')->name('add_banner');
+	Route::post('banner/store', 'BannerController@store')->name('store_banner');
+	Route::get('banner/edit/{id}',['as'=>'edit_banner', 'uses' => 'BannerController@edit']);
+	Route::put('banner/update/{id}',['as'=>'update_banner', 'uses' => 'BannerController@update']);
+
+	/*** Pages ***/
+	Route::get('section', 'SectionController@index')->name('section');
+	Route::get('section/add', 'SectionController@create')->name('add_section');
+	Route::post('section/store', 'SectionController@store')->name('store_section');
+	Route::get('section/edit/{id}',['as'=>'edit_section', 'uses' => 'SectionController@edit']);
+	Route::put('section/update/{id}',['as'=>'update_section', 'uses' => 'SectionController@update']);
+
+	/*** Users ***/
+	Route::get('user', 'UserController@index')->name('users');
+	Route::get('user/add', 'UserController@create')->name('add_user');
+	Route::post('user/store', 'UserController@store')->name('store_user');
+	Route::get('user/edit/{id}',['as'=>'edit_user', 'uses' => 'UserController@edit']);
+	Route::put('user/update/{id}',['as'=>'update_user', 'uses' => 'UserController@update']);
+
+});
 
 Auth::routes();

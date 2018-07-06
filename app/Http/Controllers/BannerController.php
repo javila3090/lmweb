@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Intervention\Image\Facades\Image;
 use App\Banner;
+use App\BannerType;
 use App\Section;
 
 class BannerController extends Controller
@@ -30,8 +31,8 @@ class BannerController extends Controller
 	}
 
     public function create(){
-
-		return view('admin.banner.add');
+    	$banner_types = BannerType::pluck('name','id');
+		return view('admin.banner.add',compact('banner_types'));
 	}
 
 	public function store(Request $request){
@@ -82,13 +83,56 @@ class BannerController extends Controller
 	public function edit($id){
 
 		$banner = Banner::find($id);
-		$banner_types = Banner::All()->pluck('name','id');
-		$selected_banner = Banner::where('id',$banner->banner_type_id)->first();
+		$banner_types = BannerType::pluck('name','id');
+		$selected_banner = BannerType::where('id',$banner->banner_type_id)->pluck('name','id');
 
 		return view('admin.banner.edit',compact('banner','banner_types','selected_banner'));
 	}
 
-	public function update(){
-		
+	public function update($id){
+
+		$banner = Banner::find($id);
+
+		$rules = array(
+			'title' => 'required',
+			'banner_type_id' => 'required',
+		);
+
+		$validator = Validator::make(Input::all(), $rules);
+
+		if ($validator->fails()) {
+
+			$messages = $validator->messages();
+			return redirect('admin/banner')->withErrors($messages);
+
+		}else{
+
+			$file = Input::file('image');
+
+			if($file != ""){
+                //Creamos una instancia de la libreria instalada   
+				$image = Image::make(Input::file('image'));
+                //Ruta donde queremos guardar las imagenes
+				$path = public_path().'/uploads/banners/';
+                // Guardar Original
+                //$image->save($path.$file->getClientOriginalName());
+                // Cambiar de tamaño
+			//$image->resize(300,500);
+                // Guardar
+				$image->save($path.$file->getClientOriginalName());
+			}
+            //Guardamos nombre y nombreOriginal en la BD
+			$banner->title = Input::get('title');
+			$banner->subtitle = Input::get('subtitle');
+			$banner->caption = Input::get('caption');
+			$banner->banner_type_id = Input::get('banner_type_id');
+			if($file != ""){
+				$banner->image = 'uploads/banners/'.$file->getClientOriginalName();
+			}
+			$banner->update(); 
+		}
+
+		return redirect('admin/banner')->with('message', '¡Registro actualizado con éxito!');
+	
 	}
 }

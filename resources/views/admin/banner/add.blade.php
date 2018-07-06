@@ -78,11 +78,7 @@
             </div>
             <div class="form-group">
               <label>Tipo de banner</label>
-              <select name="banner_type_id" class="form-control">
-                <option value="">Elija una opción</option>
-                <option value="1">Inicio</option>
-                <option value="2">Servicios</option>
-              </select>
+              {!! Form::select('banner_type_id', $banner_types, null, ['class' => 'form-control', 'required' => 'required','placeholder'=>'Elija una opción']) !!}               
             </div>                
             <div class="form-group">
               <label for="exampleInputContenido">Contenido</label>

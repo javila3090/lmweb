@@ -9,12 +9,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Páginas</h1>
+            <h1>Usuarios</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item"><a href="#">Páginas</a></li>
+              <li class="breadcrumb-item"><a href="#">Usuarios</a></li>
               <li class="breadcrumb-item active">Lista</li>
             </ol>
           </div>
@@ -37,31 +37,25 @@
           <div class="card">
             <!-- /.card-header -->
             <div class="card-body">
-              <a href="{{url('/admin/section/add')}}" class="btn btn-primary btn-sm pull-right">Nueva página &nbsp;&nbsp;<i class="fa fa-plus"></i></a>
+              <a href="{{url('/admin/user/add')}}" class="btn btn-primary btn-sm pull-right">Nuevo usuario &nbsp;&nbsp;<i class="fa fa-plus"></i></a>
               <br/>
               <br/>
               <br/>
               <table id="example1" class="table table-bordered table-striped text-center">
                 <thead>
                   <tr>
-                    <th>Title</th>
-                    <th>Subtitle</th>
-                    <th>Contenido</th>
-                    <th>Imagen</th>
-                    <th>Tipo</th>
+                    <th>Name</th>
+                    <th>Email</th>
                     <th>Editar</th>
                     <th>Eliminar</th>
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach($sections as $v)
+                  @foreach($users as $u)
                   <tr>
-                    <td>{{$v->title}}</td>
-                    <td>{{$v->subtitle}}</td>
-                    <td>{!!$v->content!!}</td>
-                    <td>{{$v->image}}</td>
-                    <td>{{$v->section_type_id}}</td>
-                    <td><a href="{{ route('edit_section', $v) }}"><i class="fa fa-edit"></i></a></td>
+                    <td>{{$u->name}}</td>
+                    <td>{{$u->email}}</td>
+                    <td><a href="{{ route('edit_user', $u) }}"><i class="fa fa-edit"></i></a></td>
                     <td><i class="fa fa-trash"></i></td>
                   </tr>
                   @endforeach

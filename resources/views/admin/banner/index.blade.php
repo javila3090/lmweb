@@ -23,12 +23,24 @@
     </section>
 
     <section class="content">
+
+      <!--Incluir mensaje de error-->
+      @if (count($errors) > 0)
+      @include('admin.partials.errors')
+      @endif
+
+      <!--Incluir mensaje de éxito-->
+      @include('admin.partials.messages')
+
       <div class="row">
         <div class="col-12">
           <div class="card">
-          
             <!-- /.card-header -->
             <div class="card-body">
+              <a href="{{url('/admin/banner/add')}}" class="btn btn-primary btn-sm pull-right">Nuevo banner &nbsp;&nbsp;<i class="fa fa-plus"></i></a>
+              <br/>
+              <br/>
+              <br/>
               <table id="example1" class="table table-bordered table-striped text-center">
                 <thead>
                   <tr>
@@ -66,4 +78,4 @@
     </section>
     <!-- /.content -->
   </div>
-@endsection
+  @endsection

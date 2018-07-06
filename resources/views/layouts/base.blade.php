@@ -15,6 +15,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
   <link href="css/app.css" rel="stylesheet" media="screen">
   <link href="color/default.css" rel="stylesheet" media="screen">
+  <link href="css/lightboxgallery-min.css" rel="stylesheet" media="screen">
 
 </head>
 
@@ -57,8 +58,20 @@
 
     <!-- Template Custom Javascript File -->
     <script src="js/custom.js"></script>
-  
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/lightboxgallery-min.js"></script>
+    <script type="text/javascript">
+      jQuery(function($) {
+        $(document).on('click', '.lightboxgallery-gallery-item', function(event) {
+          event.preventDefault();
+          $(this).lightboxgallery({
+            showCounter: true,
+            showTitle: true,
+            showDescription: true
+          });
+        });
+      });
+    </script>
   </body>
 
-</html>
+  </html>

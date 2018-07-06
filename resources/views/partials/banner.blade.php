@@ -15,7 +15,9 @@
                 <h1 class="super-heading wow bounceInDown" data-wow-delay="0.5s">{{$v->title}}</h1>
                 <h1 class="super-heading wow bounceInLeft" data-wow-delay="1s">{{$v->subtitle}}</h1>
                 <br/>
-                <p class="super-paragraph wow bounceInRight" data-wow-delay="1s" style="font-size: 20px; line-height: 1.5;">{{$v->caption}}</p>
+                <div class="wow bounceInRight" data-wow-delay="1s">
+                    <p class="super-paragraph">{!!$v->caption!!}</p>
+                </div>
             </div>
         </div>        
         @endforeach
