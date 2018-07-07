@@ -10,6 +10,7 @@ use Intervention\Image\Facades\Image;
 use App\Banner;
 use App\BannerType;
 use App\Section;
+use App\SectionType;
 
 class BannerController extends Controller
 {
@@ -19,10 +20,10 @@ class BannerController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
 
 	public function index(){
 
@@ -30,9 +31,10 @@ class BannerController extends Controller
 		return view('admin.banner.index',compact('banners'));
 	}
 
-    public function create(){
-    	$banner_types = BannerType::pluck('name','id');
-		return view('admin.banner.add',compact('banner_types'));
+	public function create(){
+		$banner_types = BannerType::pluck('name','id');
+		$sections = SectionType::pluck('name','id');
+		return view('admin.banner.add',compact('banner_types','sections'));
 	}
 
 	public function store(Request $request){
@@ -71,13 +73,15 @@ class BannerController extends Controller
 			$banner->title = Input::get('title');
 			$banner->subtitle = Input::get('subtitle');
 			$banner->caption = Input::get('caption');
+			$banner->button = Input::get('button');
+			$banner->button_target = Input::get('button_target');
 			$banner->banner_type_id = Input::get('banner_type_id');
 			if($file != ""){
 				$banner->image = 'uploads/banners/'.$file->getClientOriginalName();
 			}
 			$banner->save(); 
 		}
-		return redirect('admin/banner/add')->with('message', '¡Registro guardado con éxito!');
+		return redirect('admin/banner')->with('message', '¡Registro guardado con éxito!');
 	}
 
 	public function edit($id){
@@ -85,8 +89,9 @@ class BannerController extends Controller
 		$banner = Banner::find($id);
 		$banner_types = BannerType::pluck('name','id');
 		$selected_banner = BannerType::where('id',$banner->banner_type_id)->pluck('name','id');
-
-		return view('admin.banner.edit',compact('banner','banner_types','selected_banner'));
+		$sections = SectionType::all();
+		$selected_button_target = SectionType::where('id',$banner->button_target)->pluck('name','id');
+		return view('admin.banner.edit',compact('banner','banner_types','selected_banner','sections','selected_button_target'));
 	}
 
 	public function update($id){
@@ -126,6 +131,8 @@ class BannerController extends Controller
 			$banner->subtitle = Input::get('subtitle');
 			$banner->caption = Input::get('caption');
 			$banner->banner_type_id = Input::get('banner_type_id');
+			$banner->button = Input::get('button');
+			$banner->button_target = Input::get('button_target');
 			if($file != ""){
 				$banner->image = 'uploads/banners/'.$file->getClientOriginalName();
 			}
@@ -133,6 +140,20 @@ class BannerController extends Controller
 		}
 
 		return redirect('admin/banner')->with('message', '¡Registro actualizado con éxito!');
-	
+
+	}
+
+	public function destroy ($id){
+		try {
+			$banner = Banner::findOrFail($id);
+			$banner->delete();
+
+			unlink(public_path('/'.$banner->image));
+
+			return response()->json(['message' => 'Ok']);
+		}
+		catch (\Exception $e) {
+			return response()->json(['message' => $e]);
+		}
 	}
 }

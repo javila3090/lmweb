@@ -9,13 +9,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Banners</h1>
+            <h1>Información General</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item"><a href="#">Banners</a></li>
-              <li class="breadcrumb-item active">Agregar</li>
+              <li class="breadcrumb-item"><a href="#">Empresa</a></li>
+              <li class="breadcrumb-item active">Información</li>
             </ol>
           </div>
         </div>
@@ -37,7 +37,7 @@
           <div class="card card-info card-outline">
             <div class="card-header">
               <h3 class="card-title">
-                Nuevo banner
+                Actualizar información
               </h3>
               <!-- tools box -->
               <div class="card-tools">
@@ -57,46 +57,46 @@
           <!-- /. tools -->
         </div>
         <!-- /.card-header -->
-        <form action="/admin/banner/store" method="POST" enctype="multipart/form-data">
+        {!! Form::model($company,['route' => ['update_company', $company], 'method' => 'PUT','enctype' => 'multipart/form-data']) !!}
           {{ csrf_field() }}
           <div class="card-body">
             <div class="form-group">
-              <label for="exampleInputTitulo">Título</label>
-              <input type="text" name="title" class="form-control" id="exampleInputTitulo" placeholder="Ingrese un título" required>
+              <label for="exampleInputName">Empresa</label>
+              {!! Form::text('name', null, ['class' => 'form-control','required'=>'true', 'placeholder'=>'Ingrese el nombre de la empresa']) !!}             
             </div>
             <div class="form-group">
-              <label for="exampleInputSubtitulo">Sub título</label>
-              <input type="text" name="subtitle" class="form-control" id="exampleInputSubtitulo" placeholder="Ingrese un subtítulo">
+              <label for="exampleInputPhone1">Teléfono 1</label>
+              {!! Form::number('phone_1', null, ['class' => 'form-control','required'=>'true', 'placeholder'=>'Ingrese un número de teléfono']) !!}
             </div>
             <div class="form-group">
-              <label for="exampleInputFile">Imagen</label>
+              <label for="exampleInputPhone2">Teléfono 2</label>
+              {!! Form::number('phone_2', null, ['class' => 'form-control','placeholder'=>'Ingrese un número de teléfono adicional']) !!}
+            </div>  
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email 1</label>
+              {!! Form::email('email_1', null, ['class' => 'form-control','required'=>'true','placeholder'=>'Ingrese un correo electrónico']) !!}
+            </div>  
+            <div class="form-group">
+              <label for="exampleInputEmail2">Email 2</label>
+              {!! Form::email('email_2', null, ['class' => 'form-control','placeholder'=>'Ingrese un correo electrónico adicional']) !!}
+            </div>            
+            <div class="form-group">
+              <label for="exampleInputFile">Logo</label>
               <div class="input-group">
                 <div class="custom-file">
-                  <input type="file" class="form-control" name="image" id="exampleInputFile">
+                  {!! Form::file('logo', null, ['class' => 'form-control','placeholder'=>'Seleccione una imagen']) !!}
                 </div>              
               </div>
             </div>
             <div class="form-group">
-              <label for="exampleInputButton">Botón</label>
-              <input type="text" name="button" class="form-control" id="exampleInputButton" placeholder="Ingrese el nombre del botón">
-            </div>
-            <div class="form-group">
-              <label>Acción del botón</label>
-              {!! Form::select('button_target', $sections, null, ['class' => 'form-control','placeholder'=>'Elija una opción']) !!}               
-            </div>            
-            <div class="form-group">
-              <label>Tipo de banner</label>
-              {!! Form::select('banner_type_id', $banner_types, null, ['class' => 'form-control', 'required' => 'required','placeholder'=>'Elija una opción']) !!}               
-            </div>                
-            <div class="form-group">
-              <label for="exampleInputContenido">Contenido</label>
-              <textarea id="editor1" name="caption" style="width: 100%"></textarea>
+              <label for="exampleInputAddress">Dirección</label>
+              {!! Form::textarea('address', null, ['class' => 'form-control','placeholder'=>'Ingrese una dirección']) !!}
             </div>            
           </div>
           <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
           </div>
-        </form>
+        {!! Form::close() !!}
       </div>
       <!-- /.card -->
     </div>

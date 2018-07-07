@@ -18,6 +18,12 @@
                 <div class="wow bounceInRight" data-wow-delay="1s">
                     <p class="super-paragraph">{!!$v->caption!!}</p>
                 </div>
+                @if($v->button)
+                <br/>
+                <div class="wow rollIn" data-wow-delay="1.5s">
+                    <a href="#{{$v->target->name}}" class="btn btn-theme btn-lg">{!!$v->button!!}</a>
+                </div>
+                @endif
             </div>
         </div>        
         @endforeach

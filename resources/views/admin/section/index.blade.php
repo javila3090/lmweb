@@ -60,9 +60,9 @@
                     <td>{{$v->subtitle}}</td>
                     <td>{!!$v->content!!}</td>
                     <td>{{$v->image}}</td>
-                    <td>{{$v->section_type_id}}</td>
-                    <td><a href="{{ route('edit_section', $v) }}"><i class="fa fa-edit"></i></a></td>
-                    <td><i class="fa fa-trash"></i></td>
+                    <td>{{$v->type->name}}</td>
+                    <td><a href="{{ route('edit_section', $v) }}" class="btn btn-primary"><i class="fa fa-edit"></i></a></td>
+                    <td><button data-id="{{$v->id}}" class="btn btn-primary delete-section" title="Delete "><i class="fa fa-trash"></i></button></td>
                   </tr>
                   @endforeach
                 </tbody>               

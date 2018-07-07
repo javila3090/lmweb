@@ -46,8 +46,7 @@
                   <tr>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Editar</th>
-                    <th>Eliminar</th>
+                    <th>Opciones</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -55,9 +54,63 @@
                   <tr>
                     <td>{{$u->name}}</td>
                     <td>{{$u->email}}</td>
-                    <td><a href="{{ route('edit_user', $u) }}"><i class="fa fa-edit"></i></a></td>
-                    <td><i class="fa fa-trash"></i></td>
+                    <td>
+                      <a href="{{ route('edit_user', $u) }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                      <button data-id="{{$u->id}}" class="btn btn-primary btn-sm delete-user" title="Delete "><i class="fa fa-trash"></i></button>
+                      @if(\Auth::id()==$u->id)
+                      <a href="#" data-id-user="{{$u->id}}" class="btn btn-primary btn-sm"  data-toggle="modal" data-target="#exampleModal"><i class="fa fa-key"></i></a>
+                      @else
+                      <a href="#" data-id-user="{{$u->id}}" class="btn btn-primary btn-sm reset-pass"><i class="fa fa-key"></i></a>
+                      @endif
+                    </td>
                   </tr>
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Cambiar contraseña</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <form method="POST" action="{{ route('change_pass_user') }}" aria-label="{{ __('Register') }}">
+                          <div class="modal-body">
+
+                            {{ csrf_field() }}
+                            <div class="card-body">                        
+                              <input type="hidden" name="id" value="{{$u->id}}">
+                              <div class="form-group row">
+                                <label for="password" class="col-md-5 col-form-label text-md-right">{{ __('Nueva contraseña') }}</label>
+
+                                <div class="col-md-6">
+                                  <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                                  @if ($errors->has('password'))
+                                  <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('password') }}</strong>
+                                  </span>
+                                  @endif
+                                </div>
+                              </div>
+
+                              <div class="form-group row">
+                                <label for="password-confirm" class="col-md-5 col-form-label text-md-right">{{ __('Confirmar contraseña') }}</label>
+
+                                <div class="col-md-6">
+                                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                </div>
+                              </div>           
+                            </div>                          
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary">Actualizar</button>
+                          </div>
+                        </form> 
+                      </div>
+                    </div>
+                  </div>
                   @endforeach
                 </tbody>               
               </table>
@@ -72,4 +125,5 @@
     </section>
     <!-- /.content -->
   </div>
-@endsection
+  <!-- Modal -->
+  @endsection

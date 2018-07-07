@@ -1,16 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="login-box">
+
   <div class="login-logo">
     <img class="img" src="{{asset('img/logo.png')}}" width="200">
   </div>
+  @if (count($errors) > 0)
+    @include('admin.partials.errors')
+  @endif
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg" style="text-transform: uppercase;"><b>Iniciar sesión</b></p>
 
-       <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
+      <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
         {{ csrf_field() }}
         <div class="form-group has-feedback">
           <input type="email" class="form-control" name="email" placeholder="Correo electrónico" required>

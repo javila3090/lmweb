@@ -22,33 +22,41 @@
     <!-- Sidebar Menu -->
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-           <li class="nav-item">
-            <a href="{{url('/admin/section')}}" class="nav-link">
-              <i class="nav-icon fa fa-list"></i>
-              <p>
-                Páginas
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{url('/admin/banner')}}" class="nav-link">
-              <i class="nav-icon fa fa-image"></i>
-              <p>
-                Banners
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{url('/admin/user')}}" class="nav-link">
-              <i class="nav-icon fa fa-user"></i>
-              <p>
-                Usuarios
-              </p>
-            </a>
-          </li>       
-        </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-  </aside>
+       <li class="nav-item">
+        <a href="{{url('/admin/section')}}" class="nav-link">
+          <i class="nav-icon fa fa-list"></i>
+          <p>
+            Páginas
+          </p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="{{url('/admin/banner')}}" class="nav-link">
+          <i class="nav-icon fa fa-image"></i>
+          <p>
+            Banners
+          </p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="{{url('/admin/company')}}" class="nav-link">
+          <i class="nav-icon fa fa-industry"></i>
+          <p>
+            Empresa
+          </p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="{{url('/admin/user')}}" class="nav-link">
+          <i class="nav-icon fa fa-user"></i>
+          <p>
+            Usuarios
+          </p>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.sidebar-menu -->
+</div>
+<!-- /.sidebar -->
+</aside>

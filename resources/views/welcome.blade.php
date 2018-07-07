@@ -16,7 +16,7 @@
         </div>
       </div>
     </div>
-    <div class="row wow fadeInUp">
+    <div class="row wow bounceInDown">
       <div class="col-md-6 about-img">
         <img src="{{$aboutUs->image}}" alt="" class="img img-responsive img-circle">
       </div>
@@ -29,33 +29,39 @@
     </div>
   </div>
 </section>
-
-<!-- Parallax 1 -->
-<section id="parallax1" class="home-section parallax" data-stellar-background-ratio="0.5">
+@if($bannerIntermedio1)
+<!-- Banner Intermedio 1 -->
+<section id="parallax1" class="home-section parallax" data-stellar-background-ratio="0.5" style="background-image: url({{$bannerIntermedio1->image}})">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div>
-          <h2 class="wow bounceInDown" data-wow-delay="0.5s">CONOCE LAS OFERTAS QUE TENEMOS PARA TI</h2>
-          <p class="lead wow bounceInUp" data-wow-delay="1s">¡Agenda tu sesión GRATIS!</p>          
+          <h2 class="wow bounceInDown" data-wow-delay="0.5s" style="text-transform: uppercase;">{{$bannerIntermedio1->title}}</h2>
+          <p class="lead wow bounceInUp" data-wow-delay="1s">{{$bannerIntermedio1->subtitle}}</p>          
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-2 col-md-offset-5">
-        <button class="btn btn-theme btn-lg btn-block size-12px"><b>Promociones</b></button>
+        @if($bannerIntermedio1->button)
+        <br/>
+        <div class="wow bounceInRight" data-wow-delay="1.5s">
+          <a href="#{{$bannerIntermedio1->target->name}}" class="btn btn-theme btn-lg">{!!$bannerIntermedio1->button!!}</a>
+        </div>
+        @endif
       </div>
     </div>
   </div>
 </section>
+@endif
 
-<!-- Team -->
+<!-- Servicios -->
 <section id="services" class="home-section bg-white">
   <div class="container">
     <div class="row">
       <div class="col-md-offset-2 col-md-8">
         <div class="section-heading">
-          <h2>Servicios</h2>
+          <h2>{{$services->title}}</h2>
           <div class="heading-line"></div>            
         </div>
       </div>
@@ -95,16 +101,15 @@
     </div>
     <div class="row">
       <div class="col-lg-12">
-
         @include('partials.gallery')
-
       </div>
     </div>
   </div>
 </section>
 
+@if($bannerIntermedio2)
 <!-- Parallax 2 -->
-<section id="parallax2" class="home-section parallax" data-stellar-background-ratio="0.5">
+<section id="parallax2" class="home-section parallax" data-stellar-background-ratio="0.5" style=" background-image: url({{$bannerIntermedio2->image}});">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -115,6 +120,35 @@
     </div>
   </div>
 </section>
+@endif
+
+@if($promotions)
+<!-- Promociones -->
+<section id="promociones" class="home-section bg-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+        <div class="section-heading">
+          <h2>{{$promotions->title}}</h2>
+          <div class="heading-line"></div>
+          <p>{{$promotions->subtitle}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-10 col-lg-offset-1 col-xs-12">
+        <div class="custom1 owl-carousel owl-theme">
+          @foreach($promotionBanners as $p)
+          <div class="item">
+            <h4><img src="{{asset($p->image)}}"></h4>
+          </div>
+          @endforeach          
+        </div>        
+      </div>
+    </div>
+  </div>
+</section>
+@endif
 
 <!-- Contact -->
 <section id="contact" class="home-section bg-gray">
@@ -131,34 +165,39 @@
 
     <div class="row">
       <div class="col-md-6">
-        <div id="sendmessage">Su mensaje ha sido enviado</div>
+        <div id="sendmessage">
+          <div class="alert alert-success fade in alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+            <b>¡Gracias por escribirnos!</b> Su mensaje será respondido a la mayor brevedad posible.
+          </div>
+        </div>
         <div id="errormessage"></div>
 
         <form action="" method="post" class="form-horizontal contactForm" role="form">
           <div class="col-md-offset-2 col-md-8">
             <div class="form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Su nombre" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+              <input type="text" name="name" class="form-control" id="name" placeholder="Su nombre" data-rule="minlen:4" data-msg="Por favor ingrese al menos 4 carácteres" />
               <div class="validation"></div>
             </div>
           </div>
 
           <div class="col-md-offset-2 col-md-8">
             <div class="form-group">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Su email" data-rule="email" data-msg="Please enter a valid email" />
+              <input type="email" class="form-control" name="email" id="email" placeholder="Su email" data-rule="email" data-msg="Por favor ingrese un correo electrónico válido" />
               <div class="validation"></div>
             </div>
           </div>
 
           <div class="col-md-offset-2 col-md-8">
             <div class="form-group">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" data-rule="minlen:4" data-msg="Por favor ingrese al menos 8 carácteres de asunto" />
               <div class="validation"></div>
             </div>
           </div>
 
           <div class="col-md-offset-2 col-md-8">
             <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Mensaje"></textarea>
+              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Por favor ingrese su mensaje" placeholder="Mensaje"></textarea>
               <div class="validation"></div>
             </div>
           </div>

@@ -60,9 +60,10 @@
                     <td>{{$v->subtitle}}</td>
                     <td>{!!$v->caption!!}</td>
                     <td>{{$v->image}}</td>
-                    <td>{{$v->banner_type_id}}</td>
-                    <td><a href="{{ route('edit_banner', $v) }}"><i class="fa fa-edit"></i></a></td>
-                    <td><i class="fa fa-trash"></i></td>
+                    <td>{{$v->type->name}}</td>
+                    <td><a class="btn btn-primary" href="{{ route('edit_banner', $v) }}"><i class="fa fa-edit"></i></a></td>
+                    <td><button data-id="{{$v->id}}" class="btn btn-primary delete-banner" title="Delete "><i class="fa fa-trash"></i></button>
+                    </td>
                   </tr>
                   @endforeach
                 </tbody>               
@@ -78,4 +79,15 @@
     </section>
     <!-- /.content -->
   </div>
-  @endsection
+
+</div>
+<div id="confirm" class="modal hide fade">
+  <div class="modal-body">
+    Are you sure?
+  </div>
+  <div class="modal-footer">
+    <button type="button" data-dismiss="modal" class="btn btn-primary" id="delete">Delete</button>
+    <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+  </div>
+</div>
+@endsection

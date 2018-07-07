@@ -58,36 +58,51 @@
         </div>
         <!-- /.card-header -->
         {!! Form::model($banner,['route' => ['update_banner', $banner], 'method' => 'PUT','enctype' => 'multipart/form-data']) !!}
-          {{ csrf_field() }}
-          <div class="card-body">
-            <div class="form-group">
-              <label for="exampleInputTitulo">Título</label>
-              {!! Form::text('title', null, ['class' => 'form-control' , 'required' => 'required','placeholder'=>'Ingrese un título']) !!}
-            </div>
-            <div class="form-group">
-              <label for="exampleInputSubtitulo">Sub título</label>
-              {!! Form::text('subtitle', null, ['class' => 'form-control' , 'placeholder'=>'Ingrese un subtítulo']) !!}              
-            </div>
-            <div class="form-group">
-              <label for="exampleInputFile">Imagen</label>
-              <div class="input-group">
-                <div class="custom-file">
-                  {!! Form::file('image', ['class' => 'form-control' , 'placeholder'=>'Escoja un achivo']) !!}                  
-                </div>              
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Tipo de banner</label>
-              {!! Form::select('banner_type_id', $banner_types, @$selected_banner_type, ['class' => 'form-control', 'required' => 'required','placeholder'=>'Elija una opción']) !!}              
-            </div>                
-            <div class="form-group">
-              <label for="exampleInputContenido">Contenido</label>
-              {!! Form::textarea('caption',null,['class'=>'form-control', 'rows' => 10, 'id'=>'editor1']) !!}
-            </div>            
+        {{ csrf_field() }}
+        <div class="card-body">
+          <div class="form-group">
+            <label for="exampleInputTitulo">Título</label>
+            {!! Form::text('title', null, ['class' => 'form-control' , 'required' => 'required','placeholder'=>'Ingrese un título']) !!}
           </div>
-          <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Actualizar</button>
+          <div class="form-group">
+            <label for="exampleInputSubtitulo">Sub título</label>
+            {!! Form::text('subtitle', null, ['class' => 'form-control' , 'placeholder'=>'Ingrese un subtítulo']) !!}              
           </div>
+          <div class="form-group">
+            <label for="exampleInputFile">Imagen</label>
+            <div class="input-group">
+              <div class="custom-file">
+                {!! Form::file('image', ['class' => 'form-control' , 'placeholder'=>'Escoja un achivo']) !!}                  
+              </div>              
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputButton">Botón</label>
+            {!! Form::text('button', null, ['class' => 'form-control' , 'placeholder'=>'Ingrese el nombre del botón']) !!}              
+          </div>
+          <div class="form-group">
+            <label>Acción del botón</label>
+            <select name="button_target" class="form-control">
+              <option value="">Seleccione una opción</option>
+              @foreach ($sections as $section)
+              <option value="{{$section->id}}" {{ ($section->id == $banner->button_target) ? 'selected=selected' : '' }}>
+                {{$section->name}}
+              </option>
+              @endforeach
+            </select>            
+          </div>           
+          <div class="form-group">
+            <label>Tipo de banner</label>
+            {!! Form::select('banner_type_id', $banner_types, @$selected_banner_type, ['class' => 'form-control', 'required' => 'required','placeholder'=>'Elija una opción']) !!}              
+          </div>                
+          <div class="form-group">
+            <label for="exampleInputContenido">Contenido</label>
+            {!! Form::textarea('caption',null,['class'=>'form-control', 'rows' => 10, 'id'=>'editor1']) !!}
+          </div>            
+        </div>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-primary">Actualizar</button>
+        </div>
         {!! Form::close() !!}
       </div>
       <!-- /.card -->

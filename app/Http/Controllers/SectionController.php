@@ -18,10 +18,10 @@ class SectionController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
 
 	public function index(){
 
@@ -76,7 +76,7 @@ class SectionController extends Controller
 			}
 			$section->save(); 
 		}
-		return redirect('admin/section/add')->with('message', '¡Registro guardado con éxito!');
+		return redirect('admin/section')->with('message', '¡Registro guardado con éxito!');
 	}
 
 	public function edit($id){
@@ -131,6 +131,19 @@ class SectionController extends Controller
 		}
 
 		return redirect('admin/section')->with('message', '¡Registro actualizado con éxito!');
+	}
+
+	public function destroy ($id){
+
+		$section = Section::findOrFail($id);
+		$section->delete();
+
+		if($section->image){
+			unlink(public_path('/'.$section->image));
+		}
+
+		return response()->json(['message' => 'Ok']);
+
 	}
 
 }

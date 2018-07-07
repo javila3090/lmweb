@@ -29,33 +29,34 @@
   
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="{{asset('adminlte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
+  <link href="{{asset('css/sweetalert.css')}}" rel="stylesheet" media="screen">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
 <body >
   <div class="wrapper">
-  <!-- Navbar -->
-  @include('admin.partials.navbar')
+    <!-- Navbar -->
+    @include('admin.partials.navbar')
 
-  <!-- Menu -->
-  @include('admin.partials.sidebar')
+    <!-- Menu -->
+    @include('admin.partials.sidebar')
 
-  <!-- Page Content -->
+    <!-- Page Content -->
 
     @section('content')
     @show
 
 
-  <!-- /.container -->
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
-  <!-- Footer -->
-  @include('admin.partials.footer')
-  
+    <!-- /.container -->
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+    <!-- Footer -->
+    @include('admin.partials.footer')
+
   </div>
 
   <!-- Bootstrap core JavaScript -->
@@ -104,18 +105,20 @@
 
   <!-- AdminLTE for demo purposes -->
   <script src="{{asset('adminlte/js/demo.js')}}"></script>
+  <script src="{{asset('js/sweetalert.min.js')}}"></script>
+  <script src="{{asset('js/custom.js')}}"></script>
   <script>
-  $(function () {
+    $(function () {
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
     ClassicEditor
-      .create(document.querySelector('#editor1'))
-      .then(function (editor) {
+    .create(document.querySelector('#editor1'))
+    .then(function (editor) {
         // The editor instance
       })
-      .catch(function (error) {
-        console.error(error)
-      })
+    .catch(function (error) {
+      console.error(error)
+    })
 
     // bootstrap WYSIHTML5 - text editor
 
@@ -132,8 +135,100 @@
       "info": true,
       "autoWidth": false
     });
+
   })
 
-</script>
+    $('.delete-banner').on('click', function(){
+      var id = $(this).attr('data-id');
+      var theElement = $(this);
+      swal({   
+        title: "¿Estás Seguro?",
+        text: "No podrás deshacer esta acción",         
+        type: "warning",   
+        showCancelButton: true,   
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Sí, estoy seguro", 
+        closeOnConfirm: true 
+      },function (isConfirm) {
+        if (isConfirm) {
+          $.ajax({
+            type: 'GET',
+            url: '/admin/banner/destroy/'+id,
+            success: function(data) {
+              if(data.message=='Ok'){
+                swal(
+                  '¡Hecho!',
+                  'Registro eliminado con éxito',
+                  'success'
+                  )                
+              }
+            }
+          });
+          $(theElement).closest('tr').remove();
+        }
+      });
+    })
+
+    $('.delete-section').on('click', function(){
+      var id = $(this).attr('data-id');
+      var theElement = $(this);
+      swal({   
+        title: "¿Estás Seguro?",
+        text: "No podrás deshacer esta acción",         
+        type: "warning",   
+        showCancelButton: true,   
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Sí, estoy seguro", 
+        closeOnConfirm: true 
+      },function (isConfirm) {
+        if (isConfirm) {
+          $.ajax({
+            type: 'GET',
+            url: '/admin/section/destroy/'+id,
+            success: function(data) {
+              if(data.message=='Ok'){
+                swal(
+                  '¡Hecho!',
+                  'Registro eliminado con éxito',
+                  'success'
+                  )
+              }
+            }
+          });
+          $(theElement).closest('tr').remove();
+        }
+      });
+    })
+
+    $('.reset-pass').on('click', function(){
+      var id = $(this).attr('data-id-user');
+      swal({   
+        title: "¿Estás Seguro?",
+        text: "La contraseña del usuario seleccionado sera reestablecida",         
+        type: "warning",   
+        showCancelButton: true,   
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Sí, estoy seguro", 
+        closeOnConfirm: true 
+      },function (isConfirm) {
+        if (isConfirm) {
+          $.ajax({
+            type: 'GET',
+            url: '/admin/user/reset/'+id,
+            success: function(data) {
+              if(data.message=='Ok'){
+                swal(
+                  '¡Hecho!',
+                  'Contraseña reestablecida con éxito',
+                  'success'
+                  )
+              }
+            }
+          });
+        }
+      });
+    })    
+
+  </script>
 </body>
 </html>

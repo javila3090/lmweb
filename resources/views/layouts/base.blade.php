@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  
   <title>Lipocero</title>
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,300,700,800" rel="stylesheet" media="screen">
@@ -16,6 +17,8 @@
   <link href="css/app.css" rel="stylesheet" media="screen">
   <link href="color/default.css" rel="stylesheet" media="screen">
   <link href="css/lightboxgallery-min.css" rel="stylesheet" media="screen">
+  <link href="css/owl.carousel.min.css" rel="stylesheet" media="screen">
+  <link href="css/owl.theme.default.min.css" rel="stylesheet" media="screen">
 
 </head>
 
@@ -39,7 +42,7 @@
 
     <!-- Footer -->
     @include('partials.footer')
-
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
     <!-- Bootstrap core JavaScript -->
     <!-- js -->
     <script src="js/jquery.js"></script>
@@ -54,12 +57,14 @@
     <script src="js/grid.js"></script>
     <script src="js/stellar.js"></script>
     <!-- Contact Form JavaScript File -->
-    <script src="contactform/contactform.js"></script>
-
+    <script src="js/contactform.js"></script>
+    
     <!-- Template Custom Javascript File -->
     <script src="js/custom.js"></script>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/lightboxgallery-min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
     <script type="text/javascript">
       jQuery(function($) {
         $(document).on('click', '.lightboxgallery-gallery-item', function(event) {
@@ -69,6 +74,19 @@
             showTitle: true,
             showDescription: true
           });
+        });
+      });
+      jQuery(document).ready(function($) {
+        $('.custom1').owlCarousel({
+          animateIn: 'flipInX',
+          items: 1,
+          margin: 30,
+          stagePadding: 30,
+          smartSpeed: 350,
+          loop:true,
+          autoplay:true,
+          autoplayTimeout:7000,
+          autoplayHoverPause:true,
         });
       });
     </script>

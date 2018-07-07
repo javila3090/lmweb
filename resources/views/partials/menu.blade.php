@@ -10,7 +10,7 @@
       </button>
 
       <!-- Logo text or image -->
-      <a class="navbar-brand" href="index.html"><img src="{{$companyInfo->logo}}" width="100" style="margin-top: -10px;"></a>
+      <a class="navbar-brand" href="{{url('/')}}"><img src="{{$companyInfo->logo}}" width="100" style="margin-top: -10px;"></a>
 
     </div>
     <div class="navigation collapse navbar-collapse navbar-ex1-collapse">
@@ -18,7 +18,7 @@
         <li class="current"><a href="#carousel-example-generic2">Inicio</a></li>
         <li><a href="#about">Nosotros</a></li>
         <li><a href="#services">Servicios</a></li>
-        <li><a href="#promotions">Promociones</a></li>
+        <li><a href="#promociones">Promociones</a></li>
         <li><a href="#gallery">Galería</a></li>
         <li><a href="#contact">Contacto</a></li>
       </ul>

@@ -9,13 +9,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Páginas</h1>
+            <h1>Mi cuenta</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item"><a href="#">Páginas</a></li>
-              <li class="breadcrumb-item active">Agregar</li>
+              <li class="breadcrumb-item active">Mi cuenta</li>
             </ol>
           </div>
         </div>
@@ -37,7 +36,7 @@
           <div class="card card-info card-outline">
             <div class="card-header">
               <h3 class="card-title">
-                Nueva página
+                Información de usuario
               </h3>
               <!-- tools box -->
               <div class="card-tools">
@@ -57,43 +56,20 @@
           <!-- /. tools -->
         </div>
         <!-- /.card-header -->
-        <form action="/admin/section/store" method="POST" enctype="multipart/form-data">
+        {!! Form::model($user,['route' => ['update_my_account', $user], 'method' => 'PUT','enctype' => 'multipart/form-data']) !!}
           {{ csrf_field() }}
           <div class="card-body">
             <div class="form-group">
-              <label for="exampleInputTitulo">Título</label>
-              <input type="text" name="title" class="form-control" id="exampleInputTitulo" placeholder="Ingrese un título">
-            </div>
+              <label for="exampleInputName">Nombre</label>
+              {!! Form::text('name', null, ['class' => 'form-control','required'=>'true', 'placeholder'=>'Ingrese su nombre completo']) !!}             
+            </div> 
             <div class="form-group">
-              <label for="exampleInputSubtitulo">Sub título</label>
-              <input type="text" name="subtitle" class="form-control" id="exampleInputSubtitulo" placeholder="Ingrese un subtítulo">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputFile">Imagen</label>
-              <div class="input-group">
-                <div class="custom-file">
-                  <input type="file" id="exampleInputFile" class="form-control" name="image">                
-                </div>                
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Tipo</label>
-              <select name="section_type_id" class="form-control">
-                <option value="">Elija una opción</option>
-                <option value="1">Nosotros</option>
-                <option value="2">Servicios</option>
-                <option value="3">Contacto</option>
-                <option value="4">Galería</option>
-                <option value="5">Promociones</option>
-              </select>
-            </div>                
-            <div class="form-group">
-              <label for="exampleInputContenido">Contenido</label>
-              <textarea id="editor1" name="content" style="width: 100%;"></textarea>
-            </div>            
+              <label for="exampleInputEmail">Correo electrónico</label>
+              {!! Form::email('email', null, ['class' => 'form-control','required'=>'true','placeholder'=>'Ingrese un correo electrónico']) !!}
+            </div>             
           </div>
           <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
           </div>
         </form>
       </div>

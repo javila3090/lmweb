@@ -20,9 +20,12 @@ class HomeController extends Controller
         $galleryBanners = Banner::where('banner_type_id',3)->get();
         $gallery = Section::where('section_type_id',4)->first();
         $companyInfo = CompanyInfo::orderBy('created_at', 'desc')->first();
-
+        $bannerIntermedio1 = Banner::where('banner_type_id',4)->first();
+        $bannerIntermedio2 = Banner::where('banner_type_id',5)->first();
+        $promotions = Section::where('section_type_id',5)->first();
+        $promotionBanners = Banner::where('banner_type_id',6)->get();
+        
         //Mapa
-
         $config = array();
         $config['center'] = '-33.434844,-70.626295';
         $config['onboundschanged'] = 'if (!centreGot) {
@@ -41,6 +44,6 @@ class HomeController extends Controller
             $map = app('map')->create_map();
             $map = array('map_js' => $map['js'], 'map_html' => $map['html']);
 
-            return view('welcome',compact('homeBanners','aboutUs','servicesBanners','services','companyInfo','contact','gallery','galleryBanners','map'));
+            return view('welcome',compact('homeBanners','aboutUs','servicesBanners','services','companyInfo','contact','gallery','galleryBanners','bannerIntermedio1','bannerIntermedio2','promotions','promotionBanners','map'));
         }
     }

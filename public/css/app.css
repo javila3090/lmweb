@@ -6111,6 +6111,7 @@ nav.navbar {
   padding: 10px 0px 10px 0px;
   width: 100%;
   border-radius: 0px;
+  z-index: 1000;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   -webkit-box-shadow: -1px 8px 19px -12px rgba(0, 0, 0, 0.75);
@@ -6829,11 +6830,9 @@ Contact
 
 #sendmessage {
   color: green;
-  border: 1px solid green;
   display: none;
   text-align: center;
   padding: 15px;
-  font-weight: 600;
   margin-bottom: 15px;
 }
 
