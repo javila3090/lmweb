@@ -303,7 +303,7 @@ Home sections
 
 .home-section {
 	width: 100%;
-	padding: 150px 0px 150px 0px;
+	padding: 100px 0px 100px 0px;
 }
 
 .carousel-fade .carousel-inner .item {
@@ -527,7 +527,7 @@ About
 ================================= */
 
 #about .about-img {
-  height: 350px;
+  height: auto;
   overflow: hidden;
 }
 
@@ -1067,6 +1067,14 @@ more media queries
   }
   .super-heading{
   	font-size:30px !important;
+  }
+
+  .section-heading h2{
+  	font-size:30px !important;
+  }
+
+  .home-section {
+    padding: 100px 0px 100px 0px !important;
   }
 }
 
