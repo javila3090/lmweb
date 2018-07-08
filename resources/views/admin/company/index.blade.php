@@ -79,7 +79,15 @@
             <div class="form-group">
               <label for="exampleInputEmail2">Email 2</label>
               {!! Form::email('email2', null, ['class' => 'form-control','placeholder'=>'Ingrese un correo electrónico adicional']) !!}
-            </div>            
+            </div>  
+            <div class="form-group">
+              <label for="exampleInputFacebook">Facebook</label>
+              {!! Form::text('facebook', null, ['class' => 'form-control','placeholder'=>'Ingrese la información de su facebook']) !!}
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail2">Email 2</label>
+              {!! Form::text('instagram', null, ['class' => 'form-control','placeholder'=>'Ingrese la información de su instagram']) !!}
+            </div>          
             <div class="form-group">
               <label for="exampleInputFile">Logo</label>
               <div class="input-group">

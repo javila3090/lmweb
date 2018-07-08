@@ -58,44 +58,52 @@
         </div>
         <!-- /.card-header -->
         {!! Form::model($company,['route' => ['update_company', $company], 'method' => 'PUT','enctype' => 'multipart/form-data']) !!}
-          {{ csrf_field() }}
-          <div class="card-body">
-            <div class="form-group">
-              <label for="exampleInputName">Empresa</label>
-              {!! Form::text('name', null, ['class' => 'form-control','required'=>'true', 'placeholder'=>'Ingrese el nombre de la empresa']) !!}             
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPhone1">Teléfono 1</label>
-              {!! Form::number('phone_1', null, ['class' => 'form-control','required'=>'true', 'placeholder'=>'Ingrese un número de teléfono']) !!}
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPhone2">Teléfono 2</label>
-              {!! Form::number('phone_2', null, ['class' => 'form-control','placeholder'=>'Ingrese un número de teléfono adicional']) !!}
-            </div>  
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email 1</label>
-              {!! Form::email('email_1', null, ['class' => 'form-control','required'=>'true','placeholder'=>'Ingrese un correo electrónico']) !!}
-            </div>  
-            <div class="form-group">
-              <label for="exampleInputEmail2">Email 2</label>
-              {!! Form::email('email_2', null, ['class' => 'form-control','placeholder'=>'Ingrese un correo electrónico adicional']) !!}
-            </div>            
-            <div class="form-group">
-              <label for="exampleInputFile">Logo</label>
-              <div class="input-group">
-                <div class="custom-file">
-                  {!! Form::file('logo', null, ['class' => 'form-control','placeholder'=>'Seleccione una imagen']) !!}
-                </div>              
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputAddress">Dirección</label>
-              {!! Form::textarea('address', null, ['class' => 'form-control','placeholder'=>'Ingrese una dirección']) !!}
-            </div>            
+        {{ csrf_field() }}
+        <div class="card-body">
+          <div class="form-group">
+            <label for="exampleInputName">Empresa</label>
+            {!! Form::text('name', null, ['class' => 'form-control','required'=>'true', 'placeholder'=>'Ingrese el nombre de la empresa']) !!}             
           </div>
-          <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Actualizar</button>
+          <div class="form-group">
+            <label for="exampleInputPhone1">Teléfono 1</label>
+            {!! Form::number('phone_1', null, ['class' => 'form-control','required'=>'true', 'placeholder'=>'Ingrese un número de teléfono']) !!}
           </div>
+          <div class="form-group">
+            <label for="exampleInputPhone2">Teléfono 2</label>
+            {!! Form::number('phone_2', null, ['class' => 'form-control','placeholder'=>'Ingrese un número de teléfono adicional']) !!}
+          </div>  
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email 1</label>
+            {!! Form::email('email_1', null, ['class' => 'form-control','required'=>'true','placeholder'=>'Ingrese un correo electrónico']) !!}
+          </div>  
+          <div class="form-group">
+            <label for="exampleInputEmail2">Email 2</label>
+            {!! Form::email('email_2', null, ['class' => 'form-control','placeholder'=>'Ingrese un correo electrónico adicional']) !!}
+          </div>
+          <div class="form-group">
+            <label for="exampleInputFacebook">Facebook</label>
+            {!! Form::text('facebook', null, ['class' => 'form-control','placeholder'=>'Ingrese la información de su facebook']) !!}
+          </div>
+          <div class="form-group">
+            <label for="exampleInputInstagram">Instagram</label>
+            {!! Form::text('instagram', null, ['class' => 'form-control','placeholder'=>'Ingrese la información de su instagram']) !!}
+          </div>   
+          <div class="form-group">
+            <label for="exampleInputFile">Logo</label>
+            <div class="input-group">
+              <div class="custom-file">
+                {!! Form::file('logo', null, ['class' => 'form-control','placeholder'=>'Seleccione una imagen']) !!}
+              </div>              
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputAddress">Dirección</label>
+            {!! Form::textarea('address', null, ['class' => 'form-control','placeholder'=>'Ingrese una dirección']) !!}
+          </div>            
+        </div>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-primary">Actualizar</button>
+        </div>
         {!! Form::close() !!}
       </div>
       <!-- /.card -->

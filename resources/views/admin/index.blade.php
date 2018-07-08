@@ -20,8 +20,10 @@
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
-        <div class="row" style="background-image: url('{{asset('img/logo.png')}}')">
-
+         <div class="row" style="min-height: 500px;">
+            <div class="col-md-12 text-center" style="background-image: url('{{asset('img/logo.png')}}'); background-repeat: no-repeat; background-position: center; opacity: 0.2; width: 100%">
+            
+            </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
