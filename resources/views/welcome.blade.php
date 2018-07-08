@@ -18,7 +18,7 @@
     </div>
     <div class="row wow bounceInDown">
       <div class="col-md-6 about-img">
-        <img src="{{$aboutUs->image}}" alt="" class="img img-responsive img-circle">
+        <img src="{{$aboutUs->image}}" alt="" class="img img-responsive img-thumbnail">
       </div>
 
       <div class="col-md-6 content">
@@ -136,7 +136,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-10 col-lg-offset-1 col-xs-12">
+      <div class="col-lg-8 col-lg-offset-2 col-xs-12">
         <div class="custom1 owl-carousel owl-theme">
           @foreach($promotionBanners as $p)
           <div class="item">
