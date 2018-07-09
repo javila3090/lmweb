@@ -13,7 +13,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Inicio</a></li>
               <li class="breadcrumb-item"><a href="#">Banners</a></li>
               <li class="breadcrumb-item active">Agregar</li>
             </ol>
@@ -95,6 +95,7 @@
           </div>
           <div class="card-footer">
             <button type="submit" class="btn btn-primary">Guardar</button>
+            <a href="{{url('admin/banner')}}" class="btn btn-danger">Volver</a>
           </div>
         </form>
       </div>

@@ -14,8 +14,8 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-              <li class="breadcrumb-item"><a href="#">Usuarios</a></li>
-              <li class="breadcrumb-item active">Editar</li>
+              <li class="breadcrumb-item"><a href="#">Mensajes</a></li>
+              <li class="breadcrumb-item active">Ver</li>
             </ol>
           </div>
         </div>
@@ -37,7 +37,7 @@
           <div class="card card-info card-outline">
             <div class="card-header">
               <h3 class="card-title">
-                Editar usuario
+                Mensaje #{{$message->id}}
               </h3>
               <!-- tools box -->
               <div class="card-tools">
@@ -51,41 +51,39 @@
           <!-- /. tools -->
         </div>
         <!-- /.card-header -->
-        {!! Form::model($user,['route' => ['update_user', $user], 'method' => 'PUT']) !!}          
+        {!! Form::model($message,['route' => ['update_section', $message], 'method' => 'PUT','enctype' => 'multipart/form-data']) !!}
         {{ csrf_field() }}
         <div class="card-body">
           <div class="form-group row">
             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
-
             <div class="col-md-6">
-
-              {!! Form::text('name', null, ['class' => 'form-control' , 'placeholder'=>'Ingrese su nombre completo','required'=>'true']) !!}  
-
-              @if ($errors->has('name'))
-              <span class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('name') }}</strong>
-              </span>
-              @endif
+              {!! Form::text('name', null, ['class' => 'form-control' , 'readonly'=>'true']) !!}  
             </div>
           </div>
 
           <div class="form-group row">
             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
-
             <div class="col-md-6">
-              {!! Form::email('email', null, ['class' => 'form-control' , 'placeholder'=>'Ingrese un email válido','required'=>'true']) !!}  
-
-              @if ($errors->has('email'))
-              <span class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('email') }}</strong>
-              </span>
-              @endif
+              {!! Form::email('email', null, ['class' => 'form-control' , 'readonly'=>'true']) !!}  
             </div>
-          </div>         
+          </div>
+
+          <div class="form-group row">
+            <label for="subject" class="col-md-4 col-form-label text-md-right">{{ __('Asunto') }}</label>
+            <div class="col-md-6">
+              {!! Form::text('subject', null, ['class' => 'form-control' ,'readonly'=>'true']) !!}  
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="message" class="col-md-4 col-form-label text-md-right">{{ __('Mensaje') }}</label>
+            <div class="col-md-6">
+              {!! Form::textarea('message', null, ['class' => 'form-control' ,'readonly'=>'true']) !!}  
+            </div>
+          </div>
         </div>
         <div class="card-footer">
-          <button type="submit" class="btn btn-primary">Actualizar</button>
-          <a href="{{url('admin/user')}}" class="btn btn-danger">Volver</a>
+          <a href="{{url('admin/messages')}}" class="btn btn-danger">Volver</a>
         </div>
         {!! Form::close() !!}
       </div>

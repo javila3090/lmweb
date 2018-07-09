@@ -2,9 +2,8 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
   <a href="/admin/" class="brand-link">
-    <img src="{{asset('img/logo.png')}}" alt="AdminLTE Logo" class="brand-image"
-    style="opacity: .8">
-    <span class="brand-text font-weight-light" style="padding: 10px;"><b>Admin</b></span>
+    <img src="{{asset('img/logo_ja.png')}}" alt="JA Logo" class="brand-image">
+    <span class="brand-text font-weight-bold" style="padding: 10px;">WEB ADMIN</span>
   </a>
 
   <!-- Sidebar -->
@@ -12,10 +11,11 @@
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="image">
-        <img src="{{asset('adminlte/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+        <img src="https://placehold.it/160x160/5CDFFF/0E3066/&text={{ strtoupper(Auth::user()->name[0]) }}" class="img-circle" alt="User Image">
+        
       </div>
       <div class="info">
-        <a href="#" class="d-block">{{\Auth::user()->name}}</a>
+        <a href="/admin/user" class="d-block">{{\Auth::user()->name}}</a>
       </div>
     </div>
 
@@ -54,6 +54,14 @@
           </p>
         </a>
       </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="nav-icon fa fa-line-chart"></i>
+          <p>
+            Estadísticas del sitio
+          </p>
+        </a>
+      </li>      
     </ul>
   </nav>
   <!-- /.sidebar-menu -->

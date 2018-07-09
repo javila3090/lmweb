@@ -48,12 +48,6 @@
     @show
 
 
-    <!-- /.container -->
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
     <!-- Footer -->
     @include('admin.partials.footer')
 
@@ -225,6 +219,81 @@
               }
             }
           });
+        }
+      });
+    })  
+
+
+    $('.delete-message').on('click', function(){
+      var id = $(this).attr('data-id');
+      var theElement = $(this);
+      swal({   
+        title: "¿Estás Seguro?",
+        text: "El mensaje seleccionado será eliminado",         
+        type: "warning",   
+        showCancelButton: true,   
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Sí, estoy seguro", 
+        closeOnConfirm: true 
+      },function (isConfirm) {
+        if (isConfirm) {
+          $.ajax({
+            type: 'GET',
+            url: '/admin/messages/destroy/'+id,
+            success: function(data) {
+              if(data.message=='Ok'){
+                swal(
+                  '¡Hecho!',
+                  'Registro eliminado con éxito',
+                  'success'
+                  )
+              }else{
+                  swal(
+                  '¡Error!',
+                  'Ocurrión un error, por favor vuelva a intentarlo',
+                  'warning'
+                  )
+              }
+            }
+          });
+          $(theElement).closest('tr').remove();
+        }
+      });
+    })
+
+    $('.delete-user').on('click', function(){
+      var id = $(this).attr('data-id-user');
+      var theElement = $(this);
+      swal({   
+        title: "¿Estás Seguro?",
+        text: "El usuario seleccionado será eliminado",         
+        type: "warning",   
+        showCancelButton: true,   
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Sí, estoy seguro", 
+        closeOnConfirm: true 
+      },function (isConfirm) {
+        if (isConfirm) {
+          $.ajax({
+            type: 'GET',
+            url: '/admin/user/destroy/'+id,
+            success: function(data) {
+              if(data.message=='Ok'){
+                swal(
+                  '¡Hecho!',
+                  'Usuario eliminado con éxito',
+                  'success'
+                  )
+              }else{
+                  swal(
+                  '¡Error!',
+                  'Ocurrión un error, por favor vuelva a intentarlo',
+                  'warning'
+                  )
+              }
+            }
+          });
+          $(theElement).closest('tr').remove();
         }
       });
     })    

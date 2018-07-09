@@ -43,12 +43,19 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 	Route::put('user/update/{id}',['as'=>'update_user', 'uses' => 'UserController@update']);
 	Route::get('user/reset/{id}',['as'=>'reset_pass_user', 'uses' => 'UserController@reset_pass']);
 	Route::post('user/update/pass/',['as'=>'change_pass_user', 'uses' => 'UserController@change_pass']);
+	Route::get('user/destroy/{id}',['as'=>'destroy_user', 'uses' => 'UserController@destroy']);
 	
 	/*** Company ***/
 	Route::get('company', 'CompanyController@index')->name('company');
 	Route::post('company/store', 'CompanyController@store')->name('store_company');
 	Route::get('company/edit/{id}',['as'=>'edit_company', 'uses' => 'CompanyController@edit']);
 	Route::put('company/update/{id}',['as'=>'update_company', 'uses' => 'CompanyController@update']);
+
+	/*** Messages ***/
+	Route::get('messages', 'ContactController@index')->name('messages');
+	Route::get('messages/show/{id}',['as'=>'show_message', 'uses' => 'ContactController@show']);
+	Route::get('messages/destroy/{id}',['as'=>'destroy_message', 'uses' => 'ContactController@destroy']);
+
 });
 
 Auth::routes();

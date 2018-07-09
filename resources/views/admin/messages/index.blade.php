@@ -14,7 +14,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-              <li class="breadcrumb-item"><a href="#">Banners</a></li>
+              <li class="breadcrumb-item"><a href="#">Mensajes</a></li>
               <li class="breadcrumb-item active">Lista</li>
             </ol>
           </div>
@@ -37,33 +37,34 @@
           <div class="card">
             <!-- /.card-header -->
             <div class="card-body">
-              <a href="{{url('/admin/banner/add')}}" class="btn btn-primary btn-sm pull-right">Nuevo banner &nbsp;&nbsp;<i class="fa fa-plus"></i></a>
-              <br/>
-              <br/>
+              <p>Mensajes sin leer: <b>{{$unread_messages}}</b></p>
+              <p>Total: <b>{{count($messages)}} Mensajes</b></p>
               <br/>
               <div class="table-responsive">
                 <table id="example1" class="table table-bordered table-striped text-center">
                   <thead>
                     <tr>
-                      <th>Título</th>
-                      <th>Subtítulo</th>
-                      <th>Información</th>
-                      <th>Imagen</th>
-                      <th>Tipo</th>
+                      <th>Remitente</th>
+                      <th>Email</th>
+                      <th>Asunto</th>
+                      <th>Fecha</th>
                       <th>Opciones</th>
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach($banners as $v)
+                    @foreach($messages as $v)
                     <tr>
-                      <td>{{$v->title}}</td>
-                      <td>{{$v->subtitle}}</td>
-                      <td>{!!$v->caption!!}</td>
-                      <td>{{$v->image}}</td>
-                      <td>{{$v->type->name}}</td>
+                      <td>{{$v->name}}</td>
+                      <td>{{$v->email}}</td>
+                      <td>{!!$v->subject!!}</td>
+                      <td>{{$v->created_at}}</td>
                       <td>
-                        <a class="btn btn-primary btn-sm" href="{{ route('edit_banner', $v) }}" title="Editar"><i class="fa fa-edit"></i></a>
-                        <button data-id="{{$v->id}}" class="btn btn-danger btn-sm delete-banner" title="Eliminar "><i class="fa fa-trash"></i></button>
+                        @if($v->open==0)
+                        <a class="btn btn-success btn-sm" href="{{ route('show_message', $v) }}" title="Abrir mensaje"><i class="fa fa-envelope"></i></a>
+                        @else
+                        <a class="btn btn-primary btn-sm" href="{{ route('show_message', $v) }}" title="Ver detalles"><i class="fa fa-envelope-open"></i></a>
+                        @endif
+                        <button data-id="{{$v->id}}" class="btn btn-danger btn-sm delete-message" title="Eliminar "><i class="fa fa-trash"></i></button>
                       </td>
                     </tr>
                     @endforeach

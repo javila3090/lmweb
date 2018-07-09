@@ -13,7 +13,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Inicio</a></li>
               <li class="breadcrumb-item"><a href="#">Páginas</a></li>
               <li class="breadcrumb-item active">Lista</li>
             </ol>
@@ -41,41 +41,43 @@
               <br/>
               <br/>
               <br/>
-              <table id="example1" class="table table-bordered table-striped text-center">
-                <thead>
-                  <tr>
-                    <th>Title</th>
-                    <th>Subtitle</th>
-                    <th>Contenido</th>
-                    <th>Imagen</th>
-                    <th>Tipo</th>
-                    <th>Editar</th>
-                    <th>Eliminar</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  @foreach($sections as $v)
-                  <tr>
-                    <td>{{$v->title}}</td>
-                    <td>{{$v->subtitle}}</td>
-                    <td>{!!$v->content!!}</td>
-                    <td>{{$v->image}}</td>
-                    <td>{{$v->type->name}}</td>
-                    <td><a href="{{ route('edit_section', $v) }}" class="btn btn-primary"><i class="fa fa-edit"></i></a></td>
-                    <td><button data-id="{{$v->id}}" class="btn btn-primary delete-section" title="Delete "><i class="fa fa-trash"></i></button></td>
-                  </tr>
-                  @endforeach
-                </tbody>               
-              </table>
+              <div class="table-responsive">
+                <table id="example1" class="table table-bordered table-striped text-center">
+                  <thead>
+                    <tr>
+                      <th>Título</th>
+                      <th>Subtítulo</th>
+                      <th>Contenido</th>
+                      <th>Imagen</th>
+                      <th>Tipo</th>
+                      <th>Opciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach($sections as $v)
+                    <tr>
+                      <td>{{$v->title}}</td>
+                      <td>{{$v->subtitle}}</td>
+                      <td>{!!$v->content!!}</td>
+                      <td>{{$v->image}}</td>
+                      <td>{{$v->type->name}}</td>
+                      <td>
+                        <a href="{{ route('edit_section', $v) }}" class="btn btn-primary btn-sm" title="Editar"><i class="fa fa-edit"></i></a>
+                        <button data-id="{{$v->id}}" class="btn btn-danger btn-sm delete-section" title="Eliminar "><i class="fa fa-trash"></i></button></td>
+                      </tr>
+                      @endforeach
+                    </tbody>               
+                  </table>
+                </div>
+              </div>
+              <!-- /.card-body -->
             </div>
-            <!-- /.card-body -->
+            <!-- /.card -->
           </div>
-          <!-- /.card -->
+          <!-- /.col -->
         </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-    </section>
-    <!-- /.content -->
-  </div>
-@endsection
+        <!-- /.row -->
+      </section>
+      <!-- /.content -->
+    </div>
+    @endsection

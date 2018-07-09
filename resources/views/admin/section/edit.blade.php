@@ -13,7 +13,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Inicio</a></li>
               <li class="breadcrumb-item"><a href="#">Páginas</a></li>
               <li class="breadcrumb-item active">Editar</li>
             </ol>
@@ -46,13 +46,7 @@
                 data-toggle="tooltip"
                 title="Collapse">
                 <i class="fa fa-minus"></i>
-              </button>
-              <button type="button" class="btn btn-tool btn-sm"
-              data-widget="remove"
-              data-toggle="tooltip"
-              title="Remove">
-              <i class="fa fa-times"></i>
-            </button>
+              </button>          
           </div>
           <!-- /. tools -->
         </div>
@@ -87,6 +81,7 @@
           </div>
           <div class="card-footer">
             <button type="submit" class="btn btn-primary">Actualizar</button>
+            <a href="{{url('admin/section')}}" class="btn btn-danger">Volver</a>
           </div>
         {!! Form::close() !!}
       </div>

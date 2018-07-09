@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Message;
 
 class LoginController extends Controller
 {
@@ -35,5 +36,8 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        
+        $unread_messages = Message::where('open',0)->count();
+        session(['unread_messages' => $unread_messages]);
     }
 }

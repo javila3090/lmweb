@@ -72,7 +72,7 @@
       <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="margin-top: 50px;">
         <div class="box-team wow bounceInUp" data-wow-delay="0.1s">
           <img src="{{$item->image}}" alt="" class="img-circle img-responsive" style="height:300px; width:100%;"/>
-          <div class="super-paragraph" style="min-height: 50px; text-transform: uppercase; line-height: 1.2; font-size: 20px; font-weight: bold;"><p>{{$item->title}}</p></div>
+          <div class="super-paragraph" style="min-height: 50px; padding-top: 20px; text-transform: uppercase; line-height: 1.2; font-size: 20px; font-weight: bold;"><p>{{$item->title}}</p></div>
           <button data-toggle="collapse" class="btn btn-theme" data-target="#{{$item->id}}">Ver más</button>
           <div id="{{$item->id}}" class="collapse text-left" style="padding-top: 20px;">
             <div class="col-md-12"> 
@@ -203,7 +203,8 @@
           </div>
           <div class="form-group">
             <div class="col-md-offset-2 col-md-8">
-              <button type="submit" class="btn btn-theme btn-lg btn-block">Enviar mensaje</button>
+              <button type="submit" class="btn btn-theme btn-lg btn-block btn-submit">Enviar mensaje</button>
+              <button type="button" class="btn btn-theme btn-lg btn-block btn-sending" disabled="true" style="display: none;">Enviando mensaje <i class="fa fa-spinner fa-spin"></i></button>
             </div>
           </div>
         </form>
@@ -235,7 +236,7 @@
           <i class="fa fa-phone fa-4x"></i>
           <h5>Teléfonos</h5>
           <p>
-            {{$companyInfo->phone_1}}<br />{{$companyInfo->phone_2}}
+            +{{$companyInfo->phone_1}}<br />+{{$companyInfo->phone_2}}
           </p>
         </div>
       </div>
@@ -253,13 +254,13 @@
       <div class="col-md-12">
         <h5>Búscanos en redes sociales</h5>
         <ul class="social-network">
-          <li><a href="#">
+          <li><a href="https://facebook.com/{{$companyInfo->facebook}}" target="_blank">
             <span class="fa-stack fa-2x">
               <i class="fa fa-circle fa-stack-2x"></i>
               <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
             </span></a>
           </li>
-          <li><a href="#">
+          <li><a href="https://instagram.com/{{$companyInfo->instagram}}" target="_blank">
             <span class="fa-stack fa-2x">
               <i class="fa fa-circle fa-stack-2x"></i>
               <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>

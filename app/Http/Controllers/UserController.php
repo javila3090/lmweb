@@ -99,15 +99,6 @@ class UserController extends Controller
 
     }
 
-    public function destroy ($id){
-
-        $user = User::findOrFail($id);
-        $user->delete();
-
-        return response()->json(['message' => 'Ok']);
-
-    }
-
     public function change_pass (){
 
         $rules = array(
@@ -143,5 +134,17 @@ class UserController extends Controller
 
         return response()->json(['message' => 'Ok']);
 
-    }    
+    }
+
+    public function destroy ($id){
+    try {
+      $user = User::findOrFail($id);
+      $user->delete();
+
+      return response()->json(['message' => 'Ok']);
+    }
+    catch (\Exception $e) {
+      return response()->json(['message' => $e]);
+    }
+  }
 }

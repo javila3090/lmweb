@@ -101,15 +101,23 @@ jQuery(document).ready(function($) {
       type: "POST",
       url: "/message/store",
       data: str,
+      beforeSend:function() {        
+        $(".btn-sending").show();
+        $(".btn-submit").hide();
+      },
       success: function(data) {
         if (data.message == 'OK') {
           $("#sendmessage").addClass("show");
           $("#errormessage").removeClass("show");
           $('.contactForm').find("input, textarea").val("");
+          $(".btn-sending").hide();
+          $(".btn-submit").show();
         } else {
           $("#sendmessage").removeClass("show");
           $("#errormessage").addClass("show");
           $('#errormessage').html(msg);
+          $(".btn-sending").hide();
+          $(".btn-submit").show();
           console.log(data.message);
         }
 
