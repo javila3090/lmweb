@@ -15,6 +15,8 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/admin', 'AdminController@index')->name('admin');
 
+Route::get('/analytics/views', 'AnalyticsController@index')->name('analytics');
+
 Route::post('message/store', 'ContactController@store')->name('store_message');
 
 Route::middleware(['auth'])->prefix('admin')->group(function () {
@@ -55,6 +57,8 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 	Route::get('messages', 'ContactController@index')->name('messages');
 	Route::get('messages/show/{id}',['as'=>'show_message', 'uses' => 'ContactController@show']);
 	Route::get('messages/destroy/{id}',['as'=>'destroy_message', 'uses' => 'ContactController@destroy']);
+
+	/*** Analytics ***/
 
 });
 

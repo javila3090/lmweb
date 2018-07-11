@@ -99,7 +99,11 @@
           <div class="form-group">
             <label for="exampleInputAddress">Dirección</label>
             {!! Form::textarea('address', null, ['class' => 'form-control','placeholder'=>'Ingrese una dirección']) !!}
-          </div>            
+          </div> 
+          <div class="form-group">
+            <label for="exampleInputReview">Reseña</label>
+            {!! Form::textarea('review',null,['class'=>'form-control', 'rows' => 10, 'id'=>'editor1']) !!}
+          </div>             
         </div>
         <div class="card-footer">
           <button type="submit" class="btn btn-primary">Actualizar</button>

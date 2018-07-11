@@ -5,7 +5,7 @@
 {!! $map['map_js'] !!}
 
 <!-- About -->
-<section id="about" class="home-section bg-white">
+<section id="about" class="home-section bg-gray">
   <div class="container">
     <div class="row">
       <div class="col-md-offset-2 col-md-8">
@@ -16,15 +16,43 @@
         </div>
       </div>
     </div>
-    <div class="row wow bounceInDown">
-      <div class="col-md-6 about-img">
-        <img src="{{$aboutUs->image}}" alt="" class="img img-responsive img-thumbnail">
+    <div class="row">
+      <div class="col-md-6 about-img wow bounceInDown">
+        <img src="{{$aboutUs->image}}" alt="" class="img img-responsive img-thumbnail swing wow" data-wow-delay="1s">
       </div>
-
-      <div class="col-md-6 content">
-        <p>
-          {!!$aboutUs->content!!}
-        </p>
+      <div class="col-md-6 content wow bounceInUp" data-wow-delay="0.7s">
+        @if($companyInfo->review && $aboutUs->content)
+        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+          <div class="mainflip">
+            <div class="frontside">
+              <div class="card">
+                <div class="card-body text-center">
+                  <p class="card-text"> {!!$aboutUs->content!!}</p>
+                </div>
+              </div>
+            </div>
+            <div class="backside">
+              <div class="card">
+                <div class="card-body text-center mt-4">
+                  <p class="card-text">{!!$companyInfo->review!!}</p>                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        @elseif($aboutUs->content)
+        <div class="content">
+          <p>
+            {!!$aboutUs->content!!}
+          </p>
+        </div>
+        @else
+        <div class="content">
+            <p>
+              {!!$companyInfo->review!!}
+            </p>
+        </div>
+        @endif
       </div>
     </div>
   </div>
@@ -37,7 +65,7 @@
       <div class="col-md-12">
         <div>
           <h2 class="wow bounceInDown" data-wow-delay="0.5s" style="text-transform: uppercase;">{{$bannerIntermedio1->title}}</h2>
-          <p class="lead wow bounceInUp" data-wow-delay="1s">{{$bannerIntermedio1->subtitle}}</p>          
+          <p class="lead wow bounceInUp" data-wow-delay="0.8s">{{$bannerIntermedio1->subtitle}}</p>          
         </div>
       </div>
     </div>
@@ -45,7 +73,7 @@
       <div class="col-md-2 col-md-offset-5">
         @if($bannerIntermedio1->button)
         <br/>
-        <div class="wow bounceInRight" data-wow-delay="1.5s">
+        <div class="wow bounceInRight" data-wow-delay="1.1s">
           <a href="#{{$bannerIntermedio1->target->name}}" class="btn btn-theme btn-lg">{!!$bannerIntermedio1->button!!}</a>
         </div>
         @endif
@@ -124,7 +152,7 @@
 
 @if($promotions)
 <!-- Promociones -->
-<section id="promociones" class="home-section bg-gray">
+<section id="promociones" class="home-section bg-white">
   <div class="container">
     <div class="row">
       <div class="col-md-offset-2 col-md-8">

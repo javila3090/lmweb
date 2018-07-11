@@ -26,16 +26,29 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">              
-                <p><b>Número de visitas</b></p>
-                <p>Usted no tiene configurado Google Analytics aún</p>
+                <p><b>Visitas (Últimos 7 días)</b></p>
+                <h1>{{$visitors_last_week}}</h1>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
-              </div>
-              <a href="#" class="small-box-footer">Ir a Google Analytics <i class="fa fa-arrow-circle-right"></i></a>
+              </div>              
             </div>
           </div>
           <!-- ./col -->
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">              
+                <p><b>Visitas (Último mes)</b></p>
+                <h1>{{$visitors_last_month}}</h1>
+              </div>
+              <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+              </div>            
+            </div>
+          </div>
+          <!-- ./col -->          
         </div>
         <!-- /.row -->         
       </div><!-- /.container-fluid -->
