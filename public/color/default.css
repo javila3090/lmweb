@@ -37,6 +37,7 @@ a, a:hover {
 
 .btn-theme {
   background: #007bff;
+  border-radius: 4px;
 }
 
 .contact-widget i {

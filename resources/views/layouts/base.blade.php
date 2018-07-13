@@ -27,7 +27,7 @@
 
     <!-- Menú -->
     @include('partials.menu')
-
+    <a href="#nosotros" class="scroll-down btn btn-theme size-10px">Deslice hacia abajo &nbsp;<i class="fa fa-chevron-down"></i></a>
     <!-- Banner -->
     @include('partials.banner')
 

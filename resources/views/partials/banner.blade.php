@@ -2,13 +2,15 @@
     <!-- Indicators -->
     <ol class="carousel-indicators">
         @foreach( $homeBanners as $v )
-        <li data-target="#carousel-example-generic" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
+        <li data-target="#carousel-example-generic2" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
         @endforeach
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
+
         @foreach($homeBanners as $v)
+
         <div class="item {{ $loop->first ? ' active' : '' }}" style="background-image: url('{{$v->image}}');">
             <div class="overlay"></div>
             <div class="carousel-caption">
@@ -23,7 +25,7 @@
                 <div class="wow rollIn" data-wow-delay="1.5s">
                     <a href="#{{$v->target->name}}" class="btn btn-theme btn-lg">{!!$v->button!!}</a>
                 </div>
-                @endif
+                @endif                
             </div>
         </div>        
         @endforeach

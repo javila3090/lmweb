@@ -5945,6 +5945,14 @@ h6,
   width: 50%;
 }
 
+.desktop {
+  display: block !important;
+}
+
+.responsive {
+  display: none !important;
+}
+
 #team .card {
   border: none;
   background: #ffffff;
@@ -6162,6 +6170,19 @@ margin, padding
   margin-top: 40px;
 }
 
+.scroll-down {
+  position: fixed;
+  display: block;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 2px;
+  right: 15px;
+  bottom: 15px;
+  -webkit-transition: background 0.5s;
+  transition: background 0.5s;
+  z-index: 1000;
+}
+
 /* Back to top button */
 
 .back-to-top {
@@ -6360,7 +6381,7 @@ h4 {
 
 .carousel-caption p {
   font-family: 'Merienda Regular' !important;
-  font-size: 20px !important;
+  font-size: 26px !important;
   line-height: 1.5 !important;
 }
 
@@ -6506,35 +6527,35 @@ Intro
 About
 ================================= */
 
-#about .about-img {
+#nosotros .about-img {
   height: auto;
   overflow: hidden;
 }
 
-#about .about-img img {
+#nosotros .about-img img {
   margin-left: -15px;
   max-width: 100%;
 }
 
 @media (max-width: 768px) {
-  #about .about-img {
+  #nosotros .about-img {
     height: auto;
   }
 
-  #about .about-img img {
+  #nosotros .about-img img {
     margin-left: 0;
     padding-bottom: 30px;
   }
 }
 
-#about .content h2 {
+#nosotros .content h2 {
   color: #333;
   font-weight: 300;
   font-size: 24px;
   text-align: left;
 }
 
-#about .content h3 {
+#nosotros .content h3 {
   color: #777;
   font-weight: 300;
   font-size: 18px;
@@ -6543,12 +6564,12 @@ About
   text-align: left;
 }
 
-#about .content p {
+#nosotros .content p {
   line-height: 26px;
   text-align: justify;
 }
 
-#about .content p:last-child {
+#nosotros .content p:last-child {
   margin-bottom: 0;
 }
 
@@ -7092,15 +7113,27 @@ more media queries
   }
 
   .super-heading {
-    font-size: 30px !important;
+    font-size: 34px !important;
   }
 
   .section-heading h2 {
     font-size: 30px !important;
   }
 
+  .carousel-caption p {
+    font-size: 22px !important;
+  }
+
   .home-section {
     padding: 100px 0px 100px 0px !important;
+  }
+
+  .desktop {
+    display: none !important;
+  }
+
+  .responsive {
+    display: block !important;
   }
 }
 

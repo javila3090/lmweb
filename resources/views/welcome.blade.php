@@ -5,7 +5,7 @@
 {!! $map['map_js'] !!}
 
 <!-- About -->
-<section id="about" class="home-section bg-gray">
+<section id="nosotros" class="home-section bg-gray">
   <div class="container">
     <div class="row">
       <div class="col-md-offset-2 col-md-8">
@@ -20,7 +20,7 @@
       <div class="col-md-6 about-img wow bounceInDown">
         <img src="{{$aboutUs->image}}" alt="" class="img img-responsive img-thumbnail swing wow" data-wow-delay="1s">
       </div>
-      <div class="col-md-6 content wow bounceInUp" data-wow-delay="0.7s">
+      <div class="col-md-6 content wow bounceInUp desktop" data-wow-delay="0.7s">
         @if($companyInfo->review && $aboutUs->content)
         <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
           <div class="mainflip">
@@ -48,14 +48,40 @@
         </div>
         @else
         <div class="content">
-            <p>
-              {!!$companyInfo->review!!}
-            </p>
+          <p>
+            {!!$companyInfo->review!!}
+          </p>
+        </div>
+        @endif
+      </div>
+
+      <div class="col-md-6 content wow bounceInUp responsive" data-wow-delay="0.7s">
+        @if($companyInfo->review && $aboutUs->content)
+        <div class="content">
+          <p>
+            {!!$aboutUs->content!!}
+          </p>
+          <p>
+            {!!$companyInfo->review!!}
+          </p>
+        </div>
+        @elseif($aboutUs->content)
+        <div class="content">
+          <p>
+            {!!$aboutUs->content!!}
+          </p>
+        </div>
+        @else
+        <div class="content">
+          <p>
+            {!!$companyInfo->review!!}
+          </p>
         </div>
         @endif
       </div>
     </div>
   </div>
+</div>
 </section>
 @if($bannerIntermedio1)
 <!-- Banner Intermedio 1 -->
@@ -84,7 +110,7 @@
 @endif
 
 <!-- Servicios -->
-<section id="services" class="home-section bg-white">
+<section id="servicios" class="home-section bg-white">
   <div class="container">
     <div class="row">
       <div class="col-md-offset-2 col-md-8">
@@ -116,7 +142,7 @@
 </section>
 
 <!-- Gallery -->
-<section id="gallery" class="home-section bg-gray">
+<section id="galeria" class="home-section bg-gray">
   <div class="container">
     <div class="row">
       <div class="col-md-offset-2 col-md-8">
@@ -137,7 +163,7 @@
 
 @if($bannerIntermedio2)
 <!-- Parallax 2 -->
-<section id="parallax2" class="home-section parallax" data-stellar-background-ratio="0.5" style=" background-image: url({{$bannerIntermedio2->image}});">
+<section id="parallax2" class="home-section parallax desktop" data-stellar-background-ratio="0.5" style=" background-image: url({{$bannerIntermedio2->image}});">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -179,7 +205,7 @@
 @endif
 
 <!-- Contact -->
-<section id="contact" class="home-section bg-gray">
+<section id="contacto" class="home-section bg-gray">
   <div class="container">
     <div class="row">
       <div class="col-md-offset-2 col-md-8">

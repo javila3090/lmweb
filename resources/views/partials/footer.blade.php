@@ -7,7 +7,7 @@
         </div>
         <div class="col-md-4 col-xs-12 size-16px text-left">
           <h3 class="size-18px">Formas de pago</h3>
-          <img src="{{asset('img/webpay_lipocero.png')}}" class="img img-responsive" style="width: 50%">
+          <img src="{{asset('img/webpay_lipocero.png')}}" class="img img-responsive" style="width: 80%">
         </div>
         <div class="col-md-12 col-xs-12 size-16px">
           <br/>

@@ -19,11 +19,11 @@
     <div class="navigation collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav">
         <li class="current"><a href="#carousel-example-generic2">Inicio</a></li>
-        <li><a href="#about">Nosotros</a></li>
-        <li><a href="#services">Servicios</a></li>
-        <li><a href="#gallery">Galería</a></li>
+        <li><a href="#nostros">Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#galeria">Galería</a></li>
         <li><a href="#promociones">Promociones</a></li>
-        <li><a href="#contact">Contacto</a></li>
+        <li><a href="#contacto">Contacto</a></li>
       </ul>
     </div>
   </div>
