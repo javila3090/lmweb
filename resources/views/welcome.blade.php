@@ -1,328 +1,413 @@
 @extends('layouts.base')
 
 @section('content')
-<script type='text/javascript'>var centreGot = false;</script>
-{!! $map['map_js'] !!}
+    <!-- ##### Hero Area Start ##### -->
+    <section class="hero-area">
+        <div class="hero-slides owl-carousel">
 
-<!-- About -->
-<section id="nosotros" class="home-section bg-gray">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-offset-2 col-md-8">
-        <div class="section-heading">
-          <h2>{{$aboutUs->title}}</h2>
-          <div class="heading-line"></div>
-          <p>{{$aboutUs->subtitle}}</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 about-img wow bounceInDown">
-        <img src="{{$aboutUs->image}}" alt="" class="img img-responsive img-thumbnail swing wow" data-wow-delay="1s">
-      </div>
-      <div class="col-md-6 content wow bounceInUp desktop" data-wow-delay="0.7s">
-        @if($companyInfo->review && $aboutUs->content)
-        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-          <div class="mainflip">
-            <div class="frontside">
-              <div class="card">
-                <div class="card-body text-center">
-                  <p class="card-text"> {!!$aboutUs->content!!}</p>
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12 col-md-7">
+                            <div class="hero-slides-content">
+                                <h2 data-animation="fadeInUp" data-delay="100ms">Take a step into the <span>Crypto World</span></h2>
+                                <h6 data-animation="fadeInUp" data-delay="400ms">Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et arcu pulvinar.</h6>
+                                <a href="#" class="btn cryptos-btn" data-animation="fadeInUp" data-delay="700ms">Read More</a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-5">
+                            <div class="hero-slides-thumb" data-animation="fadeInUp" data-delay="1000ms">
+                                <img src="img/bg-img/bg-2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-            <div class="backside">
-              <div class="card">
-                <div class="card-body text-center mt-4">
-                  <p class="card-text">{!!$companyInfo->review!!}</p>                  
+
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12 col-md-7">
+                            <div class="hero-slides-content">
+                                <h2 data-animation="fadeInUp" data-delay="100ms">Take a step into the <span>Crypto World</span></h2>
+                                <h6 data-animation="fadeInUp" data-delay="400ms">Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et arcu pulvinar.</h6>
+                                <a href="#" class="btn cryptos-btn" data-animation="fadeInUp" data-delay="700ms">Read More</a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-5">
+                            <div class="hero-slides-thumb" data-animation="fadeInUp" data-delay="1000ms">
+                                <img src="img/bg-img/bg-2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-        @elseif($aboutUs->content)
-        <div class="content">
-          <p>
-            {!!$aboutUs->content!!}
-          </p>
-        </div>
-        @else
-        <div class="content">
-          <p>
-            {!!$companyInfo->review!!}
-          </p>
-        </div>
-        @endif
-      </div>
+    </section>
+    <!-- ##### Hero Area End ##### -->
 
-      <div class="col-md-6 content wow bounceInUp responsive" data-wow-delay="0.7s">
-        @if($companyInfo->review && $aboutUs->content)
-        <div class="content">
-          <p>
-            {!!$aboutUs->content!!}
-          </p>
-          <p>
-            {!!$companyInfo->review!!}
-          </p>
-        </div>
-        @elseif($aboutUs->content)
-        <div class="content">
-          <p>
-            {!!$aboutUs->content!!}
-          </p>
-        </div>
-        @else
-        <div class="content">
-          <p>
-            {!!$companyInfo->review!!}
-          </p>
-        </div>
-        @endif
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-@if($bannerIntermedio1)
-<!-- Banner Intermedio 1 -->
-<section id="parallax1" class="home-section parallax" data-stellar-background-ratio="0.5" style="background-image: url({{$bannerIntermedio1->image}})">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div>
-          <h2 class="wow bounceInDown" data-wow-delay="0.5s" style="text-transform: uppercase;">{{$bannerIntermedio1->title}}</h2>
-          <p class="lead wow bounceInUp" data-wow-delay="0.8s">{{$bannerIntermedio1->subtitle}}</p>          
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-2 col-md-offset-5">
-        @if($bannerIntermedio1->button)
-        <br/>
-        <div class="wow bounceInRight" data-wow-delay="1.1s">
-          <a href="#{{$bannerIntermedio1->target->name}}" class="btn btn-theme btn-lg">{!!$bannerIntermedio1->button!!}</a>
-        </div>
-        @endif
-      </div>
-    </div>
-  </div>
-</section>
-@endif
-
-<!-- Servicios -->
-<section id="servicios" class="home-section bg-white">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-offset-2 col-md-8">
-        <div class="section-heading">
-          <h2>{{$services->title}}</h2>
-          <div class="heading-line"></div>            
-        </div>
-      </div>
-    </div>
-    @foreach ($servicesBanners->chunk(4) as $chunk)
-    <div class="row">
-      @foreach($chunk as $item)
-      <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="margin-top: 50px;">
-        <div class="box-team wow bounceInUp" data-wow-delay="0.1s">
-          <img src="{{$item->image}}" alt="" class="img-circle img-responsive" style="height:300px; width:100%;"/>
-          <div class="super-paragraph" style="min-height: 50px; padding-top: 20px; text-transform: uppercase; line-height: 1.2; font-size: 20px; font-weight: bold;"><p>{{$item->title}}</p></div>
-          <button data-toggle="collapse" class="btn btn-theme" data-target="#{{$item->id}}">Ver más</button>
-          <div id="{{$item->id}}" class="collapse text-left" style="padding-top: 20px;">
-            <div class="col-md-12"> 
-              {!!$item->caption!!}
+    <!-- ##### Course Area Start ##### -->
+    <div class="cryptos-feature-area section-padding-100-0">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center mx-auto">
+                        <h3>Let’s change <br><span>the world</span> together</h3>
+                        <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et arcu pulvinar cursus a eget nisl. Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi.</p>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      @endforeach
-    </div>
-    @endforeach
-  </div>
-</section>
+            
+            <div class="row">
+                <!-- Single Course Area -->
+                <div class="col-12 col-md-6 col-xl-3">
+                    <div class="single-feature-area mb-100 text-center">
+                        <i class="icon-safebox"></i>
+                        <h3>Fast &amp; Easy</h3>
+                        <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et arcu pulvinar cursus a eget nisl. Cras vitae turpis lacinia, lacinia lacus non, fermentum.</p>
+                        <a href="#" class="btn cryptos-btn">Read More</a>
+                    </div>
+                </div>
 
-<!-- Gallery -->
-<section id="galeria" class="home-section bg-gray">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-offset-2 col-md-8">
-        <div class="section-heading">
-          <h2>{{$gallery->title}}</h2>
-          <div class="heading-line"></div>
-          <p>{{$gallery->subtitle}}</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-12">
-        @include('partials.gallery')
-      </div>
-    </div>
-  </div>
-</section>
+                <!-- Single Course Area -->
+                <div class="col-12 col-md-6 col-xl-3">
+                    <div class="single-feature-area active mb-100 text-center">
+                        <i class="icon-bitcoin"></i>
+                        <h3>No strigs attached</h3>
+                        <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et arcu pulvinar cursus a eget nisl. Cras vitae turpis lacinia, lacinia lacus non, fermentum.</p>
+                        <a href="#" class="btn cryptos-btn">Read More</a>
+                    </div>
+                </div>
 
-@if($bannerIntermedio2)
-<!-- Parallax 2 -->
-<section id="parallax2" class="home-section parallax desktop" data-stellar-background-ratio="0.5" style=" background-image: url({{$bannerIntermedio2->image}});">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <ul class="clients" style="padding: 20px;">
+                <!-- Single Course Area -->
+                <div class="col-12 col-md-6 col-xl-3">
+                    <div class="single-feature-area mb-100 text-center">
+                        <i class="icon-exchange"></i>
+                        <h3>Small Commisions</h3>
+                        <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et arcu pulvinar cursus a eget nisl. Cras vitae turpis lacinia, lacinia lacus non, fermentum.</p>
+                        <a href="#" class="btn cryptos-btn">Read More</a>
+                    </div>
+                </div>
 
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-@endif
-
-@if($promotions)
-<!-- Promociones -->
-<section id="promociones" class="home-section bg-white">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-offset-2 col-md-8">
-        <div class="section-heading">
-          <h2>{{$promotions->title}}</h2>
-          <div class="heading-line"></div>
-          <p>{{$promotions->subtitle}}</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-xs-12">
-        <div class="custom1 owl-carousel owl-theme">
-          @foreach($promotionBanners as $p)
-          <div class="item">
-            <h4><img src="{{asset($p->image)}}"></h4>
-          </div>
-          @endforeach          
-        </div>        
-      </div>
-    </div>
-  </div>
-</section>
-@endif
-
-<!-- Contact -->
-<section id="contacto" class="home-section bg-gray">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-offset-2 col-md-8">
-        <div class="section-heading">
-          <h2>{{$contact->title}}</h2>
-          <div class="heading-line"></div>
-          <h3>{{$contact->subtitle}}</h3>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-6">
-        <div id="sendmessage">
-          <div class="alert alert-success fade in alert-dismissible">
-            <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
-            <b>¡Gracias por escribirnos!</b> Su mensaje será respondido a la mayor brevedad posible.
-          </div>
-        </div>
-        <div id="errormessage"></div>
-
-        <form action="" method="post" class="form-horizontal contactForm" role="form">
-          <div class="col-md-offset-2 col-md-8">
-            <div class="form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Su nombre" data-rule="minlen:4" data-msg="Por favor ingrese al menos 4 carácteres" />
-              <div class="validation"></div>
+                <!-- Single Course Area -->
+                <div class="col-12 col-md-6 col-xl-3">
+                    <div class="single-feature-area mb-100 text-center">
+                        <i class="icon-wallet"></i>
+                        <h3>10% Secure</h3>
+                        <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et arcu pulvinar cursus a eget nisl. Cras vitae turpis lacinia, lacinia lacus non, fermentum.</p>
+                        <a href="#" class="btn cryptos-btn">Read More</a>
+                    </div>
+                </div>
             </div>
-          </div>
-
-          <div class="col-md-offset-2 col-md-8">
-            <div class="form-group">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Su email" data-rule="email" data-msg="Por favor ingrese un correo electrónico válido" />
-              <div class="validation"></div>
-            </div>
-          </div>
-
-          <div class="col-md-offset-2 col-md-8">
-            <div class="form-group">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" data-rule="minlen:4" data-msg="Por favor ingrese al menos 8 carácteres de asunto" />
-              <div class="validation"></div>
-            </div>
-          </div>
-
-          <div class="col-md-offset-2 col-md-8">
-            <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Por favor ingrese su mensaje" placeholder="Mensaje"></textarea>
-              <div class="validation"></div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-md-offset-2 col-md-8">
-              <button type="submit" class="btn btn-theme btn-lg btn-block btn-submit">Enviar mensaje</button>
-              <button type="button" class="btn btn-theme btn-lg btn-block btn-sending" disabled="true" style="display: none;">Enviando mensaje <i class="fa fa-spinner fa-spin"></i></button>
-            </div>
-          </div>
-        </form>
-
-      </div>
-      <div class="col-md-6">
-        {!! $map['map_html'] !!} 
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- Bottom widget -->
-<section id="bottom-widget" class="home-section bg-white">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="contact-widget wow bounceInLeft">
-          <i class="fa fa-map-marker fa-4x"></i>
-          <h5>Dirección</h5>
-          <p>
-            {{$companyInfo->address}}
-          </p>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="contact-widget wow bounceInUp">
-          <i class="fa fa-phone fa-4x"></i>
-          <h5>Teléfonos</h5>
-          <p>
-            +{{$companyInfo->phone_1}}<br />+{{$companyInfo->phone_2}}
-          </p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="contact-widget wow bounceInRight">
-          <i class="fa fa-envelope fa-4x"></i>
-          <h5>Correo electrónico</h5>
-          <p>
-            {{$companyInfo->email_1}}<br />{{$companyInfo->email_2}}
-          </p>
-        </div>
-      </div>
     </div>
-    <div class="row mar-top30">
-      <div class="col-md-12">
-        <h5>Búscanos en redes sociales</h5>
-        <ul class="social-network">
-          <li><a href="https://facebook.com/{{$companyInfo->facebook}}" target="_blank">
-            <span class="fa-stack fa-2x">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-            </span></a>
-          </li>
-          <li><a href="https://instagram.com/{{$companyInfo->instagram}}" target="_blank">
-            <span class="fa-stack fa-2x">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-            </span></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- ##### Course Area End ##### -->
+
+    <!-- ##### About Area Start ##### -->
+    <section class="cryptos-about-area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6">
+                    <div class="about-thumbnail mb-100">
+                        <img src="img/bg-img/about.png" alt="">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="about-content mb-100">
+                        <div class="section-heading">
+                            <h3>Let’s change <br><span>the world</span> together</h3>
+                            <h5>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et arcu pulvinar cursus a eget nisl.</h5>
+                            <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et arcu pulvinar cursus a eget nisl. Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi.</p>
+                            <a href="#" class="btn cryptos-btn mt-30">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### About Area End ##### -->
+
+    <!-- ##### Currency Area Start ##### -->
+    <section class="currency-calculator-area section-padding-100 bg-img bg-overlay" style="background-image: url(img/bg-img/bg-2.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center white mx-auto">
+                        <h3 class="mb-4">Cryptocurrency Calculator</h3>
+                        <h5 class="mb-2">Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et arcu pulvinar cursus a eget nisl.</h5>
+                        <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et arcu pulvinar cursus a eget nisl. Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="currency-calculator mb-15 clearfix">
+                        <form action="#" method="post" class="d-flex align-items-center justify-content-center">
+                            <!-- Calculator Part -->
+                            <div class="calculator-first-part d-flex align-items-center">
+                                <input type="text" name="inputNumber" placeholder="1">
+                                <select>
+                                    <option>BTC</option>
+                                    <option>USD</option>
+                                    <option>INR</option>
+                                    <option>BDT</option>
+                                </select>
+                            </div>
+
+                            <!-- Equal Sign -->
+                            <div class="equal-sign">=</div>
+
+                            <!-- Calculator Part -->
+                            <div class="calculator-sec-part d-flex align-items-center">
+                                <input type="text" name="inputNumber" placeholder="940045">
+                                <select>
+                                    <option>EUR</option>
+                                    <option>USD</option>
+                                    <option>INR</option>
+                                    <option>BDT</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="currency-calculator mb-15">
+                        <form action="#" method="post" class="d-flex align-items-center justify-content-center">
+                            <!-- Calculator Part -->
+                            <div class="calculator-first-part d-flex align-items-center">
+                                <input type="text" name="inputNumber" placeholder="10400">
+                                <select>
+                                    <option>USD</option>
+                                    <option>BTC</option>
+                                    <option>INR</option>
+                                    <option>BDT</option>
+                                </select>
+                            </div>
+
+                            <!-- Equal Sign -->
+                            <div class="equal-sign">=</div>
+
+                            <!-- Calculator Part -->
+                            <div class="calculator-sec-part d-flex align-items-center">
+                                <input type="text" name="inputNumber" placeholder="1.02">
+                                <select>
+                                    <option>BTC</option>
+                                    <option>USD</option>
+                                    <option>INR</option>
+                                    <option>BDT</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Currency Area End ##### -->
+
+    <!-- ##### Blog Area Start ##### -->
+    <section class="cryptos-blog-area section-padding-100">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-7">
+                    <div class="blog-area">
+                        <!-- Single Blog Area -->
+                        <div class="single-blog-area d-flex align-items-start">
+                            <!-- Thumbnail -->
+                            <div class="blog-thumbnail">
+                                <img src="img/blog-img/1.jpg" alt="">
+                            </div>
+                            <!-- Content -->
+                            <div class="blog-content">
+                                <a href="#" class="post-title">This Platform Aims to Disrupt the Market</a>
+                                <div class="meta-data">
+                                    <a href="#">Crypto News</a> |
+                                    <a href="#">March 18, 2018</a>
+                                </div>
+                                <p>Morbi vel arcu gravida, iaculis lacus vel, posuere ipsum. Sed faucibus mauris vitae urna consectetur, sit amet maximus nisl sagittis.</p>
+                            </div>
+                        </div>
+                        <!-- Single Blog Area -->
+                        <div class="single-blog-area d-flex align-items-start">
+                            <!-- Thumbnail -->
+                            <div class="blog-thumbnail">
+                                <img src="img/blog-img/2.jpg" alt="">
+                            </div>
+                            <!-- Content -->
+                            <div class="blog-content">
+                                <a href="#" class="post-title">New Hedge Funds invests in Crypto</a>
+                                <div class="meta-data">
+                                    <a href="#">Crypto News</a> |
+                                    <a href="#">March 18, 2018</a>
+                                </div>
+                                <p>Iaculis lacus vel, posuere ipsum. Sed faucibus mauris vitae urna consectetur, sit amet maximus nisl sagittis. Ut in iaculis enim.</p>
+                            </div>
+                        </div>
+                        <!-- Single Blog Area -->
+                        <div class="single-blog-area d-flex align-items-start">
+                            <!-- Thumbnail -->
+                            <div class="blog-thumbnail">
+                                <img src="img/blog-img/3.jpg" alt="">
+                            </div>
+                            <!-- Content -->
+                            <div class="blog-content">
+                                <a href="#" class="post-title">This Platform Aims to Disrupt the Market</a>
+                                <div class="meta-data">
+                                    <a href="#">Crypto News</a> |
+                                    <a href="#">March 18, 2018</a>
+                                </div>
+                                <p>Morbi vel arcu gravida, iaculis lacus vel, posuere ipsum. Sed faucibus mauris vitae urna consectetur, sit amet maximus nisl sagittis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-5">
+                    <div class="cryptos-prices-table">
+
+                        <!-- Single Price Table -->
+                        <div class="single-price-table d-flex align-items-center justify-content-between">
+                            <div class="p-content d-flex align-items-center">
+                                <span>01</span>
+                                <img src="img/bg-img/bitcoin.png" alt="">
+                                <p>Bitcoin <span>BTC</span></p>
+                            </div>
+                            <div class="price increase">
+                                <p>$12 456.78</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Price Table -->
+                        <div class="single-price-table d-flex align-items-center justify-content-between">
+                            <div class="p-content d-flex align-items-center">
+                                <span>02</span>
+                                <img src="img/bg-img/ethereum.png" alt="">
+                                <p>Ethereum <span>ETH</span></p>
+                            </div>
+                            <div class="price increase">
+                                <p>$1051.98</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Price Table -->
+                        <div class="single-price-table d-flex align-items-center justify-content-between">
+                            <div class="p-content d-flex align-items-center">
+                                <span>03</span>
+                                <img src="img/bg-img/bitcoin-cash.png" alt="">
+                                <p>Bitcoin Cash <span>BCH</span></p>
+                            </div>
+                            <div class="price decrease">
+                                <p>$2256.78</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Price Table -->
+                        <div class="single-price-table d-flex align-items-center justify-content-between">
+                            <div class="p-content d-flex align-items-center">
+                                <span>04</span>
+                                <img src="img/bg-img/ripple.png" alt="">
+                                <p>Ripple <span>XRP</span></p>
+                            </div>
+                            <div class="price increase">
+                                <p>$2.03</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Price Table -->
+                        <div class="single-price-table d-flex align-items-center justify-content-between">
+                            <div class="p-content d-flex align-items-center">
+                                <span>05</span>
+                                <img src="img/bg-img/litecoin.png" alt="">
+                                <p>Litecoin <span>LTC</span></p>
+                            </div>
+                            <div class="price increase">
+                                <p>$321.98</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Price Table -->
+                        <div class="single-price-table d-flex align-items-center justify-content-between">
+                            <div class="p-content d-flex align-items-center">
+                                <span>06</span>
+                                <img src="img/bg-img/cardano.png" alt="">
+                                <p>Cardano <span>ADA</span></p>
+                            </div>
+                            <div class="price increase">
+                                <p>$0.75</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Price Table -->
+                        <div class="single-price-table d-flex align-items-center justify-content-between">
+                            <div class="p-content d-flex align-items-center">
+                                <span>07</span>
+                                <img src="img/bg-img/nem.png" alt="">
+                                <p>NEM <span>XEM</span></p>
+                            </div>
+                            <div class="price increase">
+                                <p>$0.89</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Price Table -->
+                        <div class="single-price-table d-flex align-items-center justify-content-between">
+                            <div class="p-content d-flex align-items-center">
+                                <span>08</span>
+                                <img src="img/bg-img/neo.png" alt="">
+                                <p>NEO <span>NEO</span></p>
+                            </div>
+                            <div class="price decrease">
+                                <p>$123.90</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Price Table -->
+                        <div class="single-price-table d-flex align-items-center justify-content-between">
+                            <div class="p-content d-flex align-items-center">
+                                <span>09</span>
+                                <img src="img/bg-img/stellar.png" alt="">
+                                <p>Stellar <span>XLM</span></p>
+                            </div>
+                            <div class="price increase">
+                                <p>$0.67</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Price Table -->
+                        <div class="single-price-table d-flex align-items-center justify-content-between">
+                            <div class="p-content d-flex align-items-center">
+                                <span>10</span>
+                                <img src="img/bg-img/iota.png" alt="">
+                                <p>IOTA <span>IOT</span></p>
+                            </div>
+                            <div class="price increase">
+                                <p>$3.55</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Newsletter Area -->
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="newsletter-area mt-100">
+                        <div class="section-heading text-center mx-auto">
+                            <h3>Subscribe to <span>Newsletter</span></h3>
+                            <h6>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et arcu pulvinar cursus a eget nisl.</h6>
+                        </div>
+                        <form action="#" method="post">
+                            <input type="email" name="email" placeholder="Subscribe to newsletter">
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Blog Area End ##### -->
 @endsection

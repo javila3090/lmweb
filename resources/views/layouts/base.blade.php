@@ -2,94 +2,76 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-  
-  <title>Lipocero</title>
+    <!-- Title -->
+    <title>Cryptos - Cryptocurrency &amp; Mining Template</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,300,700,800" rel="stylesheet" media="screen">
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
 
-  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-  <link href="css/app.css" rel="stylesheet" media="screen">
-  <link href="color/default.css" rel="stylesheet" media="screen">
-  <link href="css/lightboxgallery-min.css" rel="stylesheet" media="screen">
-  <link href="css/owl.carousel.min.css" rel="stylesheet" media="screen">
-  <link href="css/owl.theme.default.min.css" rel="stylesheet" media="screen">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
 
 </head>
 
-<body class="hold-transition sidebar-mini">
-  <div class="wrapper">
+<body>
+    <!-- ##### Preloader ##### -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+    </div>
 
-    <!-- Menú -->
-    @include('partials.menu')
-    <a href="#nosotros" class="scroll-down btn btn-theme size-10px">Deslice hacia abajo &nbsp;<i class="fa fa-chevron-down"></i></a>
-    <!-- Banner -->
-    @include('partials.banner')
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
 
-    <!-- Page Content -->
-    <div class="">
+        <!-- Top Header Area -->
+        <!--<div class="top-header">
+            <div class="container h-100">
+                <div class="row h-100">
+                    <div class="col-12 h-100">
+                        <div class="top-header-content h-100 d-flex align-items-center justify-content-between">
+                            <!-- Top Headline
+                            <div class="top-headline">
+                                <p>Welcome to <span>Cryptos</span></p>
+                            </div>
+                            <!-- Top Login & Faq & Earn Monery btn
+                            <div class="login-faq-earn-money">
+                                <a href="#">Login | Register</a>
+                                <a href="#">FAQ</a>
+                                <a href="#" class="active">Earn Money</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+        <!-- Menú -->
+        @include('partials.menu')
+    </header>
+    <!-- ##### Header Area End ##### -->
 
       @section('content')
       @show
 
-    </div>
-    <!-- /.container -->
-
-    <!-- Footer -->
+    <!-- ##### Footer Area Start ##### -->
     @include('partials.footer')
-    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-    <!-- Bootstrap core JavaScript -->
-    <!-- js -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/mb.bgndGallery.js"></script>
-    <script src="js/mb.bgndGallery.effects.js"></script>
-    <script src="js/jquery.simple-text-rotator.min.js"></script>
-    <script src="js/jquery.scrollTo.min.js"></script>
-    <script src="js/jquery.nav.js"></script>
-    <script src="js/modernizr.custom.js"></script>
-    <script src="js/grid.js"></script>
-    <script src="js/stellar.js"></script>
-    <!-- Contact Form JavaScript File -->
-    <script src="js/contactform.js"></script>
-    
-    <!-- Template Custom Javascript File -->
-    <script src="js/custom.js"></script>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/lightboxgallery-min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script type="text/javascript">
-      jQuery(function($) {
-        $(document).on('click', '.lightboxgallery-gallery-item', function(event) {
-          event.preventDefault();
-          $(this).lightboxgallery({
-            showCounter: true,
-            showTitle: true,
-            showDescription: true
-          });
-        });
-      });
-      jQuery(document).ready(function($) {
-        $('.custom1').owlCarousel({
-          animateIn: 'flipInX',
-          items: 1,
-          margin: 30,
-          stagePadding: 30,
-          smartSpeed: 350,
-          loop:true,
-          autoplay:true,
-          autoplayTimeout:7000,
-          autoplayHoverPause:true,
-        });
-      });
-    </script>
-  </body>
 
-  </html>
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+</body>
+
+</html>
