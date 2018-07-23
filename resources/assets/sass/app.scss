@@ -19,6 +19,36 @@
 @import 'custom-icon';
 @import 'classy-nav.min';
 
+@font-face {
+  font-family: 'Baloo Regular';
+  src: url(/fonts/Baloo-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Sahitya Bold';
+  src: url(/fonts/Sahitya-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Sahitya Regular';
+  src: url(/fonts/Sahitya-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Philosopher Regular';
+  src: url(/fonts/Philosopher-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Philosopher SemiBold';
+  src: url(/fonts/Philosopher-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: 'Philosopher Bold';
+  src: url(/fonts/Philosopher-Bold.ttf);
+}
+
 /* :: 3.0 Base CSS */
 
 * {
@@ -73,6 +103,72 @@ ol {
 img {
     height: auto;
     max-width: 100%;
+}
+
+/* Tamaño Fuentes
+------------------------------------------------------------------ */
+.size-48px {
+  font-size: $size-48 !important;
+}
+.size-40px {
+  font-size: $size-40 !important;
+}
+.size-38px {
+  font-size: $size-38 !important;
+}
+.size-36px {
+  font-size: $size-36 !important;
+}
+.size-34px {
+  font-size: $size-34 !important;
+}
+.size-32px {
+  font-size: $size-32 !important;
+}
+.size-30px {
+  font-size: $size-30 !important;
+}
+.size-28px {
+  font-size: $size-28 !important;
+}
+.size-26px {
+  font-size: $size-26 !important;
+}
+.size-24px {
+  font-size: $size-24 !important;
+}
+.size-22px {
+  font-size: $size-22 !important;
+}
+.size-20px {
+  font-size: $size-20 !important;
+}
+.size-18px {
+  font-size: $size-18 !important;
+}
+.size-16px {
+  font-size: $size-16 !important;
+}
+.size-14px {
+  font-size: $size-14 !important;
+}
+.size-12px {
+  font-size: $size-12 !important;
+}
+.size-10px {
+  font-size: $size-10 !important;
+}
+
+.title-regular{
+    font-family: 'Sahitya Bold';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.subtitle-regular{
+    font-family: 'Sahitya Regular';
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* Spacing */
@@ -303,7 +399,7 @@ img {
     background-position: center center;
     background-size: cover;
     &::after {
-        background-color: rgba(10, 12, 18, 0.9);
+        background-color: rgba(0,0,0,0.6);
         position: absolute;
         z-index: -1;
         top: 0;
@@ -590,13 +686,16 @@ textarea:focus {
 }
 
 /* :: 6.0 Welcome Area CSS */
+.hero-slides-content{
+    margin-top:80px;
+}
 
 .hero-slides {
     position: relative;
     z-index: 1;
     .single-hero-slide {
         width: 100%;
-        height: 850px;
+        height: 750px;
         position: relative;
         z-index: 1;
         @include bg-gradients;
@@ -614,6 +713,9 @@ textarea:focus {
             color: $white-color;
             margin-bottom: 30px;
             font-weight: 600;
+            font-family: 'Sahitya Regular' !important;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             @media #{$breakpoint-lg} {
                 font-size: 48px;
             }
@@ -628,10 +730,13 @@ textarea:focus {
             }
         }
         h6 {
+            font-size:26px;
             color: $white-color;
             margin-bottom: 60px;
             line-height: 2;
             font-weight: 400;
+            font-family: 'Sahitya Regular' !important;
+            text-transform: uppercase;
         }
         .hero-slides-thumb {
             img {

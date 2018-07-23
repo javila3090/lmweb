@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,900|Open+Sans:400,600,700);/* [Master Stylesheet v1.0] */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,900|Open+Sans:400,600,700);@charset "UTF-8";
+/* [Master Stylesheet v1.0] */
 /* :: :: 1.0 Import Fonts */
 /* :: 2.0 Import All CSS */
 /*!
@@ -15671,6 +15672,36 @@ img {
   margin-right: 15px;
 }
 
+@font-face {
+  font-family: 'Baloo Regular';
+  src: url(/fonts/Baloo-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Sahitya Bold';
+  src: url(/fonts/Sahitya-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Sahitya Regular';
+  src: url(/fonts/Sahitya-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Philosopher Regular';
+  src: url(/fonts/Philosopher-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Philosopher SemiBold';
+  src: url(/fonts/Philosopher-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: 'Philosopher Bold';
+  src: url(/fonts/Philosopher-Bold.ttf);
+}
+
 /* :: 3.0 Base CSS */
 * {
   margin: 0;
@@ -15726,6 +15757,88 @@ ol li {
 img {
   height: auto;
   max-width: 100%;
+}
+
+/* Tamaño Fuentes
+------------------------------------------------------------------ */
+.size-48px {
+  font-size: 48px !important;
+}
+
+.size-40px {
+  font-size: 40px !important;
+}
+
+.size-38px {
+  font-size: 38px !important;
+}
+
+.size-36px {
+  font-size: 36px !important;
+}
+
+.size-34px {
+  font-size: 34px !important;
+}
+
+.size-32px {
+  font-size: 32px !important;
+}
+
+.size-30px {
+  font-size: 30px !important;
+}
+
+.size-28px {
+  font-size: 28px !important;
+}
+
+.size-26px {
+  font-size: 26px !important;
+}
+
+.size-24px {
+  font-size: 24px !important;
+}
+
+.size-22px {
+  font-size: 22px !important;
+}
+
+.size-20px {
+  font-size: 20px !important;
+}
+
+.size-18px {
+  font-size: 18px !important;
+}
+
+.size-16px {
+  font-size: 16px !important;
+}
+
+.size-14px {
+  font-size: 14px !important;
+}
+
+.size-12px {
+  font-size: 12px !important;
+}
+
+.size-10px {
+  font-size: 10px !important;
+}
+
+.title-regular {
+  font-family: 'Sahitya Bold';
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.subtitle-regular {
+  font-family: 'Sahitya Regular';
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* Spacing */
@@ -15973,7 +16086,7 @@ img {
 }
 
 .bg-overlay::after {
-  background-color: rgba(10, 12, 18, 0.9);
+  background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
   z-index: -1;
   top: 0;
@@ -15990,7 +16103,7 @@ img {
   padding-right: 0;
   width: 30px;
   height: 30px;
-  background-color: #ffaf02;
+  background-color: #3b2b58;
   line-height: 30px;
   text-align: center;
   position: absolute;
@@ -16022,7 +16135,7 @@ textarea:focus {
 
 /* ScrollUp */
 #scrollUp {
-  background-color: #ffaf02;
+  background-color: #3b2b58;
   border-radius: 0;
   bottom: 60px;
   -webkit-box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
@@ -16065,7 +16178,7 @@ textarea:focus {
   transition: all 500ms;
   font-weight: 700;
   text-transform: uppercase;
-  border-bottom: 3px solid #ffaf02;
+  border-bottom: 3px solid #3b2b58;
 }
 
 .cryptos-btn.active, .cryptos-btn:hover, .cryptos-btn:focus {
@@ -16076,7 +16189,7 @@ textarea:focus {
 }
 
 .cryptos-btn.btn-2 {
-  background-color: #ffaf02;
+  background-color: #3b2b58;
   border-bottom: 3px solid #292929;
   color: #ffffff;
 }
@@ -16084,19 +16197,19 @@ textarea:focus {
 .cryptos-btn.btn-2:hover, .cryptos-btn.btn-2:focus {
   color: #292929;
   background-color: #eef3f6;
-  border-bottom: 3px solid #ffaf02;
+  border-bottom: 3px solid #3b2b58;
 }
 
 .cryptos-btn.btn-3 {
   background-color: #292929;
-  border-bottom: 3px solid #ffaf02;
+  border-bottom: 3px solid #3b2b58;
   color: #ffffff;
 }
 
 .cryptos-btn.btn-3:hover, .cryptos-btn.btn-3:focus {
   color: #292929;
   background-color: #eef3f6;
-  border-bottom: 3px solid #ffaf02;
+  border-bottom: 3px solid #3b2b58;
 }
 
 /* :: 5.0 Header Area CSS */
@@ -16135,7 +16248,7 @@ textarea:focus {
 }
 
 .header-area .top-header .top-headline p span {
-  color: #ffaf02;
+  color: #3b2b58;
 }
 
 .header-area .top-header .login-faq-earn-money a {
@@ -16152,7 +16265,7 @@ textarea:focus {
 }
 
 .header-area .top-header .login-faq-earn-money a:hover, .header-area .top-header .login-faq-earn-money a:focus, .header-area .top-header .login-faq-earn-money a.active {
-  color: #ffaf02;
+  color: #3b2b58;
 }
 
 .header-area .cryptos-main-menu {
@@ -16274,14 +16387,14 @@ textarea:focus {
   font-weight: 600;
   color: #292929;
   cursor: pointer;
-  border-bottom: 2px solid #ffaf02;
+  border-bottom: 2px solid #3b2b58;
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
 }
 
 .header-area .cryptos-main-menu .classynav .header-newsletter-form form button:hover {
   background-color: #292929;
-  color: #ffaf02;
+  color: #3b2b58;
 }
 
 .megamenu-slides .owl-prev,
@@ -16310,6 +16423,10 @@ textarea:focus {
 }
 
 /* :: 6.0 Welcome Area CSS */
+.hero-slides-content {
+  margin-top: 80px;
+}
+
 .hero-slides {
   position: relative;
   z-index: 1;
@@ -16317,7 +16434,7 @@ textarea:focus {
 
 .hero-slides .single-hero-slide {
   width: 100%;
-  height: 850px;
+  height: 750px;
   position: relative;
   z-index: 1;
   background: #0d104d;
@@ -16348,6 +16465,9 @@ textarea:focus {
   color: #ffffff;
   margin-bottom: 30px;
   font-weight: 600;
+  font-family: 'Sahitya Regular' !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -16373,10 +16493,13 @@ textarea:focus {
 }
 
 .hero-slides .single-hero-slide h6 {
+  font-size: 26px;
   color: #ffffff;
   margin-bottom: 60px;
   line-height: 2;
   font-weight: 400;
+  font-family: 'Sahitya Regular' !important;
+  text-transform: uppercase;
 }
 
 .hero-slides .single-hero-slide .hero-slides-thumb img {
@@ -16409,7 +16532,7 @@ textarea:focus {
   visibility: hidden;
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
-  border-bottom: 2px solid #ffaf02;
+  border-bottom: 2px solid #3b2b58;
 }
 
 @media only screen and (max-width: 767px) {
@@ -16426,7 +16549,7 @@ textarea:focus {
 .hero-slides .owl-next:hover,
 .hero-slides .owl-next:focus {
   background-color: #292929;
-  color: #ffaf02;
+  color: #3b2b58;
 }
 
 .hero-slides .owl-next {
@@ -16503,7 +16626,7 @@ textarea:focus {
 }
 
 .single-feature-area.active, .single-feature-area:hover, .single-feature-area:focus {
-  background-color: #ffaf02;
+  background-color: #3b2b58;
   -webkit-box-shadow: 0 5px 70px rgba(0, 0, 0, 0.15);
           box-shadow: 0 5px 70px rgba(0, 0, 0, 0.15);
 }
@@ -16533,7 +16656,7 @@ textarea:focus {
 }
 
 .single-feature-area.style-2 i {
-  color: #ffaf02;
+  color: #3b2b58;
 }
 
 .single-feature-area.style-2 p {
@@ -16551,7 +16674,7 @@ textarea:focus {
 }
 
 .single-feature-area.style-2.active h3, .single-feature-area.style-2:hover h3, .single-feature-area.style-2:focus h3 {
-  color: #ffaf02;
+  color: #3b2b58;
 }
 
 .single-feature-area.style-2.active p, .single-feature-area.style-2:hover p, .single-feature-area.style-2:focus p {
@@ -16928,7 +17051,7 @@ textarea:focus {
 .newsletter-area {
   position: relative;
   z-index: 1;
-  background-color: #ffaf02;
+  background-color: #3b2b58;
   padding: 70px 15px;
 }
 
@@ -17214,7 +17337,7 @@ textarea:focus {
 .guideline-content .single-step {
   padding: 35px 20px 30px;
   background-color: #ffffff;
-  border-bottom: 3px solid #ffaf02;
+  border-bottom: 3px solid #3b2b58;
   margin-bottom: 25px;
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
@@ -17233,7 +17356,7 @@ textarea:focus {
   font-size: 36px;
   font-weight: 900;
   line-height: 1;
-  color: #ffaf02;
+  color: #3b2b58;
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
 }
@@ -17417,7 +17540,7 @@ textarea:focus {
 
 .single-accordion h6 a {
   border-radius: 0;
-  background-color: #ffaf02;
+  background-color: #3b2b58;
   color: #292929;
   border-bottom: 3px solid #292929;
   display: block;
@@ -17447,7 +17570,7 @@ textarea:focus {
 .single-accordion h6 a.collapsed {
   background-color: #eef3f6;
   color: #8e8e8e;
-  border-bottom: 3px solid #ffaf02;
+  border-bottom: 3px solid #3b2b58;
 }
 
 .single-accordion h6 a.collapsed span.accor-close {
@@ -17487,7 +17610,7 @@ textarea:focus {
 .cryptos-tabs-content .nav-tabs .nav-link {
   background-color: #eef3f6;
   color: #8e8e8e;
-  border-bottom: 3px solid #ffaf02;
+  border-bottom: 3px solid #3b2b58;
   padding: 0 15px;
   height: 50px;
   line-height: 50px;
@@ -17511,7 +17634,7 @@ textarea:focus {
 }
 
 .cryptos-tabs-content .nav-tabs .nav-link.active {
-  background-color: #ffaf02;
+  background-color: #3b2b58;
   color: #292929;
   border-bottom: 3px solid #292929;
 }

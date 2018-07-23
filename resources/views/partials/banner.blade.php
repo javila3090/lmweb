@@ -1,33 +1,24 @@
-<div id="carousel-example-generic2" class="carousel slide carousel-fullscreen carousel-fade" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        @foreach( $homeBanners as $v )
-        <li data-target="#carousel-example-generic2" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
-        @endforeach
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-
+ <!-- ##### Hero Area Start ##### -->
+ <section class="hero-area">
+    <div class="hero-slides owl-carousel">
         @foreach($homeBanners as $v)
-
-        <div class="item {{ $loop->first ? ' active' : '' }}" style="background-image: url('{{$v->image}}');">
-            <div class="overlay"></div>
-            <div class="carousel-caption">
-                <h1 class="super-heading wow bounceInDown" data-wow-delay="0.5s">{{$v->title}}</h1>
-                <h1 class="super-heading wow bounceInLeft" data-wow-delay="1s">{{$v->subtitle}}</h1>
-                <br/>
-                <div class="wow bounceInRight" data-wow-delay="1s">
-                    <p class="super-paragraph">{!!$v->caption!!}</p>
+        <!-- Single Hero Slide -->
+        <div class="single-hero-slide bg-overlay img img-responsive" style="background-image: url('{{$v->image}}');">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-md-12">
+                        <div class="hero-slides-content text-center">
+                            <h2 data-animation="fadeInUp title-regular" data-delay="100ms">{{$v->title}}</h2>
+                            <h6 data-animation="fadeInUp subtitle-regular size-26px" data-delay="400ms">{{$v->subtitle}}</h6>
+                            @if($v->button)
+                                <a href="#" class="btn cryptos-btn" data-animation="fadeInUp" data-delay="700ms">{!!$v->button!!}</a>
+                            @endif
+                        </div>
+                    </div>
                 </div>
-                @if($v->button)
-                <br/>
-                <div class="wow rollIn" data-wow-delay="1.5s">
-                    <a href="#{{$v->target->name}}" class="btn btn-theme btn-lg">{!!$v->button!!}</a>
-                </div>
-                @endif                
             </div>
-        </div>        
+        </div>
         @endforeach
     </div>
-</div>
+</section>
+<!-- ##### Hero Area End ##### -->

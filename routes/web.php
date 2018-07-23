@@ -13,6 +13,10 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('nosotros', 'HomeController@aboutUs')->name('aboutUs');
+
+Route::get('contacto', 'HomeController@contact')->name('contacto');
+
 Route::get('/admin', 'AdminController@index')->name('admin');
 
 Route::get('/analytics/views', 'AnalyticsController@index')->name('analytics');

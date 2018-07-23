@@ -45,5 +45,30 @@ class HomeController extends Controller
             $map = array('map_js' => $map['js'], 'map_html' => $map['html']);
 
             return view('welcome',compact('homeBanners','aboutUs','servicesBanners','services','companyInfo','contact','gallery','galleryBanners','bannerIntermedio1','bannerIntermedio2','promotions','promotionBanners','map'));
-        }
     }
+
+    public function contact(){
+
+        //Mapa
+        $config = array();
+        $config['center'] = '-33.434844,-70.626295';
+        $config['zoom'] = 15;
+        $config['onboundschanged'] = 'if (!centreGot) {
+            var mapCentre = map.getCenter();
+            marker_0.setOptions({
+                position: new google.maps.LatLng(mapCentre.lat(), mapCentre.lng())
+                });
+            }
+            centreGot = true;';
+
+            app('map')->initialize($config);
+
+            $marker = array();
+            app('map')->add_marker($marker);
+
+            $map = app('map')->create_map();
+            $map = array('map_js' => $map['js'], 'map_html' => $map['html']);
+
+        return view('contact',compact('map'));
+    }
+}

@@ -1,11 +1,11 @@
-        <nav class="cryptos-main-menu">
+        <div class="cryptos-main-menu">
             <div class="classy-nav-container breakpoint-off">
                 <div class="container">
                     <!-- Menu -->
                     <nav class="classy-navbar justify-content-between" id="cryptosNav">
 
                         <!-- Logo -->
-                        <a class="nav-brand" href="index.html"><img src="img/logo-lm.png" alt=""></a>
+                        <a class="nav-brand" href="/"><img src="img/logo-lm.png" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -23,35 +23,17 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="index.html">Inicio</a></li>
+                                    <li><a href="/">Inicio</a></li>
                                     <li><a href="#">Nosotros</a>
                                         <ul class="dropdown">
-                                            <li><a href="index.html">Acerca de Nosotros</a></li>
+                                            <li><a href="/">Acerca de Nosotros</a></li>
                                             <li><a href="about-us.html">Vision</a></li>
                                             <li><a href="blog.html">Mision</a></li>
-                                            <li><a href="contact.html">Nuestros clientes</a></li>
-                                            <li><a href="elements.html">Nuestros Socios</a></li>
-                                            <li><a href="#">Dropdown</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="index.html">Home</a></li>
-                                                    <li><a href="about-us.html">About Us</a></li>
-                                                    <li><a href="blog.html">Articles</a></li>
-                                                    <li><a href="contact.html">Contact</a></li>
-                                                    <li><a href="elements.html">Elements</a></li>
-                                                    <li><a href="#">Dropdown</a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="index.html">Home</a></li>
-                                                            <li><a href="about-us.html">About Us</a></li>
-                                                            <li><a href="blog.html">Articles</a></li>
-                                                            <li><a href="contact.html">Contact</a></li>
-                                                            <li><a href="elements.html">Elements</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
+                                            <li><a href="contact">Clientes</a></li>
+                                            <li><a href="elements.html">Socios</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">Mega Menu</a>
+                                    <!--<li><a href="#">Mega Menu</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
                                                 <li><a href="#">- Home</a></li>
@@ -84,16 +66,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </li>
-                                    <li><a href="#">Currencies</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    </li>-->
+                                    <li><a href="#">Servicios</a></li>
+                                    <li><a href="contacto">Contacto</a></li>
                                 </ul>
-
-                               
                             </div>
                             <!-- Nav End -->
                         </div>
                     </nav>
                 </div>
             </div>
-        </nav>
+        </div>
