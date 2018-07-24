@@ -84,7 +84,9 @@
                 <option value="2">Servicios</option>
                 <option value="3">Contacto</option>
                 <option value="4">Galería</option>
-                <option value="5">Promociones</option>
+                <option value="5">Clientes</option>
+                <option value="6">Socios</option>
+                <option value="7">Secundario</option>
               </select>
             </div>                
             <div class="form-group">

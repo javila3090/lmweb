@@ -4,7 +4,7 @@
 <script type='text/javascript'>var centreGot = false;</script>
 {!! $map['map_js'] !!}
  <!-- ##### Breadcumb Area Start ##### -->
-    <div class="breadcumb-area" style="padding-top: 120px;">
+    <div class="breadcumb-area">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12 col-md-6">
@@ -45,29 +45,12 @@
                 <div class="col-12 col-lg-6">
                     <div class="contact-information mb-100">
 
-                        <!-- Contact Logo -->
-                        <div class="contact-logo mb-50">
-                            <a href="#"><img src="img/core-img/logo.png" alt=""></a>
-                        </div>
-
-                        <p>Morbi vel arcu gravida, iaculis lacus vel, posuere ipsum. Sed faucibus mauris vitae urna consectetur, sit amet maximus nisl sagittis. Ut in iaculis enim, et pulvinar mauris. Etiam tristique magna eget velit consectetur, a tincidunt velit dictum.</p>
-
-                        <!-- Contact Social Info -->
-                        <div class="contact-social-info d-flex mt-50 mb-50">
-                            <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        </div>
-
-                        <!-- Single Contact Info -->
+<!-- Single Contact Info -->
                         <div class="single-contact-info d-flex">
                             <div class="contact-icon mr-15">
                                 <i class="fa fa-map"></i>
                             </div>
-                            <p>4127/ 5B-C Mislane Road,  Gibraltar, UK</p>
+                            <p>{!!$companyInfo->address!!}</p>
                         </div>
 
                         <!-- Single Contact Info -->
@@ -75,7 +58,7 @@
                             <div class="contact-icon mr-15">
                                 <i class="fa fa-phone"></i>
                             </div>
-                            <p>Main: 203-808-8613 <br> Office: 203-808-8648</p>
+                            <p>{!!$companyInfo->phone_1!!} @if($companyInfo->phone_2) / {!!$companyInfo->phone_2!!}@endif</p>
                         </div>
 
                         <!-- Single Contact Info -->
@@ -83,8 +66,17 @@
                             <div class="contact-icon mr-15">
                                 <i class="fa fa-envelope-o"></i>
                             </div>
-                            <p>office@yourbusiness.com</p>
+                            <p>{!!$companyInfo->email_1!!}<br>{!!$companyInfo->email_2!!}</p>
+                        </div>                        
+
+                        <!-- Contact Social Info -->
+                        <div class="contact-social-info d-flex mt-50 mb-50 text-center">
+                            <a href="https://facebook.com/{!!$companyInfo->facebook!!}"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+                            <a href="https://twitter.com/{!!$companyInfo->twitter!!}"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+                            <a href="https://instagram.com/{!!$companyInfo->instagram!!}"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
                         </div>
+
+                        
                     </div>
                 </div>
 
@@ -95,7 +87,7 @@
                             <input type="text" class="form-control" id="name" placeholder="Nombre">
                             <input type="email" class="form-control" id="email" placeholder="E-mail">
                             <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Mensaje"></textarea>
-                            <button class="btn cryptos-btn btn-2 mt-30" type="submit">Contáctanos</button>
+                            <button class="btn cryptos-btn btn-2 mt-30" type="submit">Enviar mensaje</button>
                         </form>
                     </div>
                 </div>

@@ -11,6 +11,7 @@ use App\Banner;
 use App\BannerType;
 use App\Section;
 use App\SectionType;
+use App\Icon;
 
 class BannerController extends Controller
 {
@@ -34,7 +35,8 @@ class BannerController extends Controller
 	public function create(){
 		$banner_types = BannerType::pluck('name','id');
 		$sections = SectionType::pluck('name','id');
-		return view('admin.banner.add',compact('banner_types','sections'));
+		$icons = Icon::pluck('display_name','id');
+		return view('admin.banner.add',compact('banner_types','sections','icons'));
 	}
 
 	public function store(Request $request){
@@ -76,6 +78,7 @@ class BannerController extends Controller
 			$banner->button = Input::get('button');
 			$banner->button_target = Input::get('button_target');
 			$banner->banner_type_id = Input::get('banner_type_id');
+			$banner->icon_id = Input::get('icon_id');
 			if($file != ""){
 				$banner->image = 'uploads/banners/'.$file->getClientOriginalName();
 			}
@@ -91,7 +94,9 @@ class BannerController extends Controller
 		$selected_banner = BannerType::where('id',$banner->banner_type_id)->pluck('name','id');
 		$sections = SectionType::all();
 		$selected_button_target = SectionType::where('id',$banner->button_target)->pluck('name','id');
-		return view('admin.banner.edit',compact('banner','banner_types','selected_banner','sections','selected_button_target'));
+		$icons = Icon::pluck('display_name','id');
+		$selected_icon = Icon::where('id',$banner->icon_id)->pluck('display_name','id');
+		return view('admin.banner.edit',compact('banner','banner_types','selected_banner','sections','selected_button_target','icons','selected_icon'));
 	}
 
 	public function update($id){
@@ -133,6 +138,7 @@ class BannerController extends Controller
 			$banner->banner_type_id = Input::get('banner_type_id');
 			$banner->button = Input::get('button');
 			$banner->button_target = Input::get('button_target');
+			$banner->icon_id = Input::get('icon_id');
 			if($file != ""){
 				$banner->image = 'uploads/banners/'.$file->getClientOriginalName();
 			}

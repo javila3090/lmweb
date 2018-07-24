@@ -81,6 +81,14 @@ p {
     font-weight: 500;
 }
 
+li{
+    font-family: $os-fonts;
+    color: $text-color;
+    font-size: 14px;
+    line-height: 2;
+    font-weight: 500;
+}
+
 a,
 a:hover,
 a:focus {
@@ -95,9 +103,6 @@ a:focus {
 ul,
 ol {
     margin: 0;
-    li {
-        list-style: none;
-    }
 }
 
 img {
@@ -160,15 +165,135 @@ img {
 }
 
 .title-regular{
-    font-family: 'Sahitya Bold';
+    font-family: 'Sahitya Bold' !important;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 .subtitle-regular{
-    font-family: 'Sahitya Regular';
+    font-family: 'Sahitya Regular' !important;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.color-black{
+    color: #000 !important;
+}
+
+/* Slider */
+.slick-slide {
+    margin: 0px 20px;
+}
+
+.slick-slide img {
+    width: 100%;
+}
+
+.slick-slider
+{
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+            user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
 }
 
 /* Spacing */
@@ -806,8 +931,9 @@ textarea:focus {
 .single-feature-area {
     position: relative;
     z-index: 1;
-    padding: 90px 35px;
+    padding: 50px 35px;
     background-color: $bg-gray;
+    min-height:900px;
     @include trans-duration(500ms);
     i {
         font-size: 80px;
@@ -827,8 +953,7 @@ textarea:focus {
         }
     }
     p {
-        display: block;
-        margin-bottom: 50px;
+        text-align: justify;
         @include trans-duration(500ms);
     }
     .cryptos-btn {
@@ -838,9 +963,13 @@ textarea:focus {
     &:hover,
     &:focus {
         background-color: $bg-default;
+        cursor: pointer;
         box-shadow: 0 5px 70px rgba(0, 0, 0, 0.15);
         i,
         h3,
+        h4,
+        li,
+        hr,
         p {
             color: $white-color;
         }
@@ -877,6 +1006,11 @@ textarea:focus {
             }
         }
     }
+}
+
+.single-feature-area ol{
+    margin-left:25px !important;
+    padding-bottom:20px;
 }
 
 /* :: 8.0 Currency Calculator Area CSS */
@@ -1284,7 +1418,7 @@ textarea:focus {
             display: block;
             a {
                 display: inline-block;
-                color: $text-color;
+                color: white;
                 margin-right: 25px;
                 &:hover,
                 &:focus {
@@ -1301,7 +1435,7 @@ textarea:focus {
             }
             a {
                 display: block;
-                color: $text-color;
+                color: white;
                 font-family: $os-fonts;
                 margin-bottom: 5px;
                 &:hover {
@@ -1332,7 +1466,7 @@ textarea:focus {
                     font-family: $os-fonts;
                     margin-bottom: 15px;
                     display: block;
-                    color: $text-color;
+                    color: white;
                     &:hover,
                     &:focus {
                         color: $hover-color;
@@ -1370,14 +1504,19 @@ textarea:focus {
     width: 100%;
     height: 245px;
     @include bg-gradients;
+    padding-top: 120px;
     @media #{$breakpoint-xs} {
-        height: 130px;
+        height: 160px;
+        padding-top: 80px;
     }
     .breadcumb-text {
         h2 {
-            font-size: 48px;
+            font-size: 42px;
+            font-family: 'Sahitya Bold' !important;
+            letter-spacing: 1px;
             margin-bottom: 0;
             color: $white-color;
+            text-transform: uppercase;
             @media #{$breakpoint-lg} {
                 font-size: 42px;
             }
@@ -1695,5 +1834,75 @@ textarea:focus {
         h6 {
             font-size: 18px;
         }
+    }
+}
+
+/** Media Quieres **/
+
+/* iPhone
+---------------------------------------------------------------*/
+@media only screen and (max-width: 767px) {
+
+    .section-padding-100-0 {
+        padding-top: 50px;
+        padding-bottom: 0;
+    }
+
+}
+@media only screen and (max-width: 375px) {
+    .breakpoint-on .classy-navbar .classy-menu{        
+        background-color: #3B2B58;
+        position: fixed;
+        top: 0;
+        left: -375px;
+        z-index: 1000;
+        width: 375px !important;
+        height: 100%;
+        -webkit-transition-duration: .5s;
+        transition-duration: .5s;
+        padding: 0;
+        -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        display: block;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    } 
+}
+@media only screen and (max-width: 360px) {
+    .breakpoint-on .classy-navbar .classy-menu{        
+        background-color: #3B2B58;
+        position: fixed;
+        top: 0;
+        left: -360px;
+        z-index: 1000;
+        width: 360px !important;
+        height: 100%;
+        -webkit-transition-duration: .5s;
+        transition-duration: .5s;
+        padding: 0;
+        -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        display: block;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+}
+@media only screen and (max-width: 320px) {
+    .breakpoint-on .classy-navbar .classy-menu{        
+        background-color: #3B2B58;
+        position: fixed;
+        top: 0;
+        left: -320px;
+        z-index: 1000;
+        width: 320px !important;
+        height: 100%;
+        -webkit-transition-duration: .5s;
+        transition-duration: .5s;
+        padding: 0;
+        -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        display: block;
+        overflow-x: hidden;
+        overflow-y: scroll;
     }
 }
