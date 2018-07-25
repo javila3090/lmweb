@@ -45,10 +45,10 @@
                     <img src="{{$mission->image}}" class="img img-responsive wow fadeInRightBig" data-wow-delay="0.4s" alt="">
                 </div>
             </div>
-            <div class="col-12 col-md-6">
-                <div class="section-heading white  wow fadeInLeftBig" data-wow-delay="0.5s">
+            <div class="col-12 col-md-6" >
+                <div class="section-heading white wow fadeInLeftBig bg-overlay" data-wow-delay="0.5s" style="padding:10px; background-color: #333456;">
                     <h3 class="mb-4">{{$mission->title}}</h3>
-                    <h5 class="mb-2 text-justify" style="font-weight: bolder;">{!!$mission->content!!}</h5>
+                    <h5 class="mb-2 text-justify size-30px" style="font-weight: bolder;">{!!$mission->content!!}</h5>
                 </div>
             </div>
         </div>
@@ -106,9 +106,9 @@
                 <div class="section-heading text-center mx-auto">
                     <h3>{{$partners->title}}</h3>
                 </div>                
-                <div class="guideline-content wow rollIn">
+                <div class="guideline-content">
                     @foreach($partnerBanners as $item)  
-                    <div class="col-12 col-md-3">                  
+                    <div class="col-md-4 col-lg-4 col-lg-offset-4 col-xs-12  wow rollIn">                  
                         <div class="single-step d-flex">                            
                             <div class="step-content">
                                 <img src="{{$item->image}}">

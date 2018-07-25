@@ -93,6 +93,6 @@ class HomeController extends Controller
         $last_posts = Post::orderBy('created_at', 'desc')->take(5)->get();
         $companyInfo = CompanyInfo::orderBy('created_at', 'desc')->first();
 
-        return view('blog_details',compact('post','last_posts','companyInfo'));
+        return view('post',compact('post','last_posts','companyInfo'));
     }
 }
