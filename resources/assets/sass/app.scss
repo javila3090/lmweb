@@ -25,6 +25,21 @@
 }
 
 @font-face {
+  font-family: 'Lato Light';
+  src: url(/fonts/Lato-Light.ttf);
+}
+
+@font-face {
+  font-family: 'Lato Regular';
+  src: url(/fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Lato Bold';
+  src: url(/fonts/Lato-Bold.ttf);
+}
+
+@font-face {
   font-family: 'Sahitya Bold';
   src: url(/fonts/Sahitya-Bold.ttf);
 }
@@ -174,6 +189,16 @@ img {
     font-family: 'Sahitya Regular' !important;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.heading-line {
+    margin:0 auto;
+    display: block;
+    height: 2px;
+    width: 120px;
+    background: #333;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .color-black{
@@ -406,6 +431,26 @@ img {
     padding-bottom: 70px;
 }
 
+.section-padding-50-0 {
+    padding-top: 50px;
+    padding-bottom: 0;
+}
+
+.section-padding-50-50 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.section-padding-50-100 {
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.section-padding-50-120 {
+    padding-top: 50px;
+    padding-bottom: 120px;
+}
+
 /* Section Heading */
 
 .section-heading {
@@ -414,7 +459,7 @@ img {
     max-width: 730px;
     margin-bottom: 90px;
     h3 {
-        font-size: 48px;
+        font-size: 38px;
         margin-bottom: 15px;
         font-weight: 300;
         @media #{$breakpoint-lg} {
@@ -691,7 +736,7 @@ textarea:focus {
         width: 100%;
         z-index: 100;
         height: 125px;
-        background-color: #3b2b58;
+        background-color: #333456;
         text-transform: uppercase !important;
         color: #fff !important;
         @media #{$breakpoint-xs} {
@@ -716,7 +761,7 @@ textarea:focus {
                 text-transform: uppercase;
                 &:hover,
                 &:focus {
-                    color: $hover-color;
+                    color: #ffaf02;
                 }
             }
         }
@@ -1132,6 +1177,15 @@ textarea:focus {
     }
 }
 
+/* :: About Area CSS */
+
+.about-content{
+    p{
+        text-align: justify !important;
+        line-height: 2;
+    }
+}
+
 /* :: 9.0 Blog Area CSS */
 
 .cryptos-blog-sidebar-area {
@@ -1401,6 +1455,10 @@ textarea:focus {
 
 .main-footer-area {
     background-color: #232323;
+    p{
+        color: white !important;
+        text-align: justify !important;
+    }
     .footer-widget {
         .widget-title {
             margin-bottom: 45px;
@@ -1484,6 +1542,7 @@ textarea:focus {
     p {
         font-size: 14px;
         margin-bottom: 0;
+        color: #fff !important;
         font-family: $os-fonts;
         a {
             color: $text-color;
@@ -1631,6 +1690,38 @@ textarea:focus {
             height: 350px;
         }
     }
+}
+
+.validation {
+  color: red;
+  display: none;
+  margin: 0;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+#sendmessage {
+  color: green;
+  display: none;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+#errormessage {
+  color: red;
+  display: none;
+  border: 1px solid red;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+#sendmessage.show,
+#errormessage.show,
+.show {
+  display: block;
 }
 
 .contact-information {

@@ -6,6 +6,7 @@ use App\Banner;
 use App\BannerType;
 use App\Section;
 use App\CompanyInfo;
+use App\Post;
 
 
 class HomeController extends Controller
@@ -61,5 +62,37 @@ class HomeController extends Controller
         $companyInfo = CompanyInfo::orderBy('created_at', 'desc')->first();
 
         return view('services',compact('servicesBanner','services','companyInfo'));
+    }
+
+    public function aboutUs(){
+
+        $aboutUs = Section::where('section_type_id',1)->first();
+        $mission = Section::where('section_type_id',8)->first();
+        $vision = Section::where('section_type_id',9)->first();
+        $companyInfo = CompanyInfo::orderBy('created_at', 'desc')->first();
+        $clients = Section::where('section_type_id',5)->first();
+        $clientBanners = Banner::where('banner_type_id',4)->get();
+        $partners = Section::where('section_type_id',6)->first();
+        $partnerBanners = Banner::where('banner_type_id',5)->get();
+
+        return view('about',compact('aboutUs','clientBanners','clients','companyInfo','mission','vision','partners','partnerBanners'));
+    }
+
+    public function blog(){
+
+        $posts = Post::orderBy('created_at', 'desc')->get();
+        $last_posts = Post::orderBy('created_at', 'desc')->take(5)->get();
+        $companyInfo = CompanyInfo::orderBy('created_at', 'desc')->first();
+
+        return view('blog',compact('posts','last_posts','companyInfo'));
+    }
+
+    public function post($id){
+
+        $post = Post::findOrFail($id);
+        $last_posts = Post::orderBy('created_at', 'desc')->take(5)->get();
+        $companyInfo = CompanyInfo::orderBy('created_at', 'desc')->first();
+
+        return view('blog_details',compact('post','last_posts','companyInfo'));
     }
 }

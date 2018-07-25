@@ -13,6 +13,7 @@
             <div class="col-12">
                 <div class="section-heading text-center mx-auto">
                     <h3>{{$secondary->title}}</h3>
+                    <div class="heading-line"></div>
                     <p>{{$secondary->caption}}</p>
                 </div>
             </div>
@@ -22,7 +23,7 @@
             @foreach($secondaryBanner as $v)
             <!-- Single Course Area -->
             <div class="col-12 col-md-6 col-xl-3">
-                <div class="single-feature-area mb-30 text-center" style="min-height: 400px;">
+                <div class="single-feature-area mb-30 text-center wow rollIn" style="min-height: 400px;">
                     @if($v->icon)
                     <i class="{{$v->icon->name}}"></i>
                     @endif
@@ -147,10 +148,11 @@
             <div class="container">
                 <div class="section-heading text-center mx-auto">
                     <h3>{{$clients->title}}</h3>
+                    <div class="heading-line"></div>
                 </div>
                 <section class="customer-logos slider">
                     @foreach($clientBanners as $item)
-                        <div class="slide"><img src="{{$item->image}}"></div>
+                        <div class="slide wow lightSpeedIn" data-wow-delay="0.4s"><img src="{{$item->image}}"></div>
                     @endforeach
                 </section>
             </div>

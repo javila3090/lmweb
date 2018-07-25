@@ -76,7 +76,7 @@
                                 <table cellspacing="0" cellpadding="0" border="0" align="right">
                                     <tr>
                                         <td style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 24px;">
-                                            <a href="#" target="_blank" style="color: #ffffff; text-decoration: none;"><img src="{{ $message->embed(public_path().'/img/logo.png')}}" width="27" height="23" style="display: block; border: 0px;"/></a>
+                                            <a href="#" target="_blank" style="color: #ffffff; text-decoration: none;"><img src="{{ $message->embed(public_path().'/img/logo-lm.png')}}" width="27" height="23" style="display: block; border: 0px;"/></a>
                                         </td>
                                     </tr>
                                 </table>
@@ -101,7 +101,7 @@
                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
                     <tr>
                         <td align="center" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding-top: 25px;">
-                            <img src="{{ $message->embed(public_path().'/img/logo.png')}}" width="150" height="150" style="display: block; border: 0px;"/><br>
+                            <img src="{{ $message->embed(public_path().'/img/logo-lm.png')}}" width="150" height="150" style="display: block; border: 0px;"/><br>
                             <h2 style="font-size: 30px; font-weight: 800; line-height: 36px; color: #333333; margin: 0;">
                                 ¡Tienes un nuevo mensaje!
                                 
@@ -159,7 +159,7 @@
                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
                     <tr>
                         <td align="center">
-                            <img src="{{ $message->embed(public_path().'/img/logo.png')}}" width="37" height="37" style="display: block; border: 0px;"/>
+                            <img src="{{ $message->embed(public_path().'/img/logo-lm.png')}}" width="37" height="37" style="display: block; border: 0px;"/>
                         </td>
                     </tr>
                     <tr>

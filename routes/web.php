@@ -17,6 +17,10 @@ Route::get('nosotros', 'HomeController@aboutUs')->name('aboutUs');
 
 Route::get('servicios', 'HomeController@services')->name('services');
 
+Route::get('blog', 'HomeController@blog')->name('blog');
+
+Route::get('blog/post/{blog_id}', 'HomeController@post')->name('post');
+
 Route::get('contacto', 'HomeController@contact')->name('contact');
 
 Route::get('/admin', 'AdminController@index')->name('admin');
@@ -58,6 +62,14 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 	Route::post('company/store', 'CompanyController@store')->name('store_company');
 	Route::get('company/edit/{id}',['as'=>'edit_company', 'uses' => 'CompanyController@edit']);
 	Route::put('company/update/{id}',['as'=>'update_company', 'uses' => 'CompanyController@update']);
+
+	/*** Blog ***/
+	Route::get('blog', 'BlogController@index')->name('post');
+	Route::get('blog/add', 'BlogController@create')->name('add_post');
+	Route::post('blog/store', 'BlogController@store')->name('store_post');
+	Route::get('blog/edit/{id}',['as'=>'edit_post', 'uses' => 'BlogController@edit']);
+	Route::put('blog/update/{id}',['as'=>'update_post', 'uses' => 'BlogController@update']);
+	Route::get('blog/destroy/{id}',['as'=>'destroy_post', 'uses' => 'BlogController@destroy']);
 
 	/*** Messages ***/
 	Route::get('messages', 'ContactController@index')->name('messages');

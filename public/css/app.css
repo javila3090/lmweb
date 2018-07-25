@@ -15674,6 +15674,21 @@ img {
 }
 
 @font-face {
+  font-family: 'Lato Light';
+  src: url(/fonts/Lato-Light.ttf);
+}
+
+@font-face {
+  font-family: 'Lato Regular';
+  src: url(/fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Lato Bold';
+  src: url(/fonts/Lato-Bold.ttf);
+}
+
+@font-face {
   font-family: 'Sahitya Bold';
   src: url(/fonts/Sahitya-Bold.ttf);
 }
@@ -15721,7 +15736,7 @@ h6 {
 }
 
 p {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato Regular", sans-serif;
   color: #444;
   font-size: 14px;
   line-height: 2;
@@ -15729,7 +15744,7 @@ p {
 }
 
 li {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato Regular", sans-serif;
   color: #444;
   font-size: 14px;
   line-height: 2;
@@ -15838,6 +15853,16 @@ img {
   font-family: 'Sahitya Regular' !important;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+.heading-line {
+  margin: 0 auto;
+  display: block;
+  height: 2px;
+  width: 120px;
+  background: #333;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .color-black {
@@ -16061,6 +16086,26 @@ img {
   padding-bottom: 70px;
 }
 
+.section-padding-50-0 {
+  padding-top: 50px;
+  padding-bottom: 0;
+}
+
+.section-padding-50-50 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.section-padding-50-100 {
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+.section-padding-50-120 {
+  padding-top: 50px;
+  padding-bottom: 120px;
+}
+
 /* Section Heading */
 .section-heading {
   position: relative;
@@ -16070,7 +16115,7 @@ img {
 }
 
 .section-heading h3 {
-  font-size: 48px;
+  font-size: 38px;
   margin-bottom: 15px;
   font-weight: 300;
 }
@@ -16100,7 +16145,7 @@ img {
 .section-heading h5 {
   margin-bottom: 40px;
   font-size: 18px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato Regular", sans-serif;
   font-weight: 500;
   line-height: 2;
 }
@@ -16216,7 +16261,7 @@ img {
   padding-right: 0;
   width: 30px;
   height: 30px;
-  background-color: #3b2b58;
+  background-color: #333456;
   line-height: 30px;
   text-align: center;
   position: absolute;
@@ -16248,7 +16293,7 @@ textarea:focus {
 
 /* ScrollUp */
 #scrollUp {
-  background-color: #3b2b58;
+  background-color: #333456;
   border-radius: 0;
   bottom: 60px;
   -webkit-box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
@@ -16291,7 +16336,7 @@ textarea:focus {
   transition: all 500ms;
   font-weight: 700;
   text-transform: uppercase;
-  border-bottom: 3px solid #3b2b58;
+  border-bottom: 3px solid #333456;
 }
 
 .cryptos-btn.active, .cryptos-btn:hover, .cryptos-btn:focus {
@@ -16302,7 +16347,7 @@ textarea:focus {
 }
 
 .cryptos-btn.btn-2 {
-  background-color: #3b2b58;
+  background-color: #333456;
   border-bottom: 3px solid #292929;
   color: #ffffff;
 }
@@ -16310,19 +16355,19 @@ textarea:focus {
 .cryptos-btn.btn-2:hover, .cryptos-btn.btn-2:focus {
   color: #292929;
   background-color: #eef3f6;
-  border-bottom: 3px solid #3b2b58;
+  border-bottom: 3px solid #333456;
 }
 
 .cryptos-btn.btn-3 {
   background-color: #292929;
-  border-bottom: 3px solid #3b2b58;
+  border-bottom: 3px solid #333456;
   color: #ffffff;
 }
 
 .cryptos-btn.btn-3:hover, .cryptos-btn.btn-3:focus {
   color: #292929;
   background-color: #eef3f6;
-  border-bottom: 3px solid #3b2b58;
+  border-bottom: 3px solid #333456;
 }
 
 /* :: 5.0 Header Area CSS */
@@ -16361,7 +16406,7 @@ textarea:focus {
 }
 
 .header-area .top-header .top-headline p span {
-  color: #3b2b58;
+  color: #333456;
 }
 
 .header-area .top-header .login-faq-earn-money a {
@@ -16378,7 +16423,7 @@ textarea:focus {
 }
 
 .header-area .top-header .login-faq-earn-money a:hover, .header-area .top-header .login-faq-earn-money a:focus, .header-area .top-header .login-faq-earn-money a.active {
-  color: #3b2b58;
+  color: #333456;
 }
 
 .header-area .cryptos-main-menu {
@@ -16386,7 +16431,7 @@ textarea:focus {
   width: 100%;
   z-index: 100;
   height: 125px;
-  background-color: #3b2b58;
+  background-color: #333456;
   text-transform: uppercase !important;
   color: #fff !important;
 }
@@ -16500,14 +16545,14 @@ textarea:focus {
   font-weight: 600;
   color: #292929;
   cursor: pointer;
-  border-bottom: 2px solid #3b2b58;
+  border-bottom: 2px solid #333456;
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
 }
 
 .header-area .cryptos-main-menu .classynav .header-newsletter-form form button:hover {
   background-color: #292929;
-  color: #3b2b58;
+  color: #333456;
 }
 
 .megamenu-slides .owl-prev,
@@ -16602,7 +16647,7 @@ textarea:focus {
 }
 
 .hero-slides .single-hero-slide h2 span {
-  color: #ffaf02;
+  color: #333456;
 }
 
 .hero-slides .single-hero-slide h6 {
@@ -16645,7 +16690,7 @@ textarea:focus {
   visibility: hidden;
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
-  border-bottom: 2px solid #3b2b58;
+  border-bottom: 2px solid #333456;
 }
 
 @media only screen and (max-width: 767px) {
@@ -16662,7 +16707,7 @@ textarea:focus {
 .hero-slides .owl-next:hover,
 .hero-slides .owl-next:focus {
   background-color: #292929;
-  color: #3b2b58;
+  color: #333456;
 }
 
 .hero-slides .owl-next {
@@ -16739,7 +16784,7 @@ textarea:focus {
 }
 
 .single-feature-area.active, .single-feature-area:hover, .single-feature-area:focus {
-  background-color: #3b2b58;
+  background-color: #333456;
   cursor: pointer;
   -webkit-box-shadow: 0 5px 70px rgba(0, 0, 0, 0.15);
           box-shadow: 0 5px 70px rgba(0, 0, 0, 0.15);
@@ -16779,7 +16824,7 @@ textarea:focus {
 }
 
 .single-feature-area.style-2 i {
-  color: #3b2b58;
+  color: #333456;
 }
 
 .single-feature-area.style-2 p {
@@ -16797,7 +16842,7 @@ textarea:focus {
 }
 
 .single-feature-area.style-2.active h3, .single-feature-area.style-2:hover h3, .single-feature-area.style-2:focus h3 {
-  color: #3b2b58;
+  color: #333456;
 }
 
 .single-feature-area.style-2.active p, .single-feature-area.style-2:hover p, .single-feature-area.style-2:focus p {
@@ -16834,13 +16879,13 @@ textarea:focus {
 .currency-calculator .calculator-first-part input {
   width: 85px;
   height: 53px;
-  border: 2px solid #ffaf02;
+  border: 2px solid #333456;
   border-radius: 0;
   margin-right: 12px;
   background-color: transparent;
   color: #ffffff;
   text-align: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato Regular", sans-serif;
   font-weight: 600;
   font-size: 18px;
 }
@@ -16862,7 +16907,7 @@ textarea:focus {
   background-color: #ffffff;
   border-radius: 0;
   cursor: pointer;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato Regular", sans-serif;
   font-size: 18px;
   font-weight: 600;
   line-height: 52px;
@@ -16884,7 +16929,7 @@ textarea:focus {
   height: 53px;
   background-color: transparent;
   text-align: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato Regular", sans-serif;
   font-weight: 600;
   font-size: 30px;
   color: #ffffff;
@@ -16911,7 +16956,7 @@ textarea:focus {
   background-color: #ffffff;
   color: #292929;
   text-align: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato Regular", sans-serif;
   font-weight: 600;
   font-size: 18px;
 }
@@ -16933,7 +16978,7 @@ textarea:focus {
   background-color: #ffffff;
   border-radius: 0;
   cursor: pointer;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato Regular", sans-serif;
   font-size: 18px;
   font-weight: 600;
   line-height: 52px;
@@ -16948,6 +16993,12 @@ textarea:focus {
     height: 40px;
     font-size: 14px;
   }
+}
+
+/* :: About Area CSS */
+.about-content p {
+  text-align: justify !important;
+  line-height: 2;
 }
 
 /* :: 9.0 Blog Area CSS */
@@ -17008,12 +17059,12 @@ textarea:focus {
   font-size: 18px;
   display: block;
   margin-bottom: 15px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato Regular", sans-serif;
   font-weight: 600;
 }
 
 .single-blog-area .blog-content .post-title:hover {
-  color: #ffaf02;
+  color: #333456;
 }
 
 .single-blog-area .blog-content p {
@@ -17028,13 +17079,13 @@ textarea:focus {
 .single-blog-area .blog-content .meta-data a {
   display: inline-block;
   font-size: 14px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato Regular", sans-serif;
   font-weight: 400;
   color: #444;
 }
 
 .single-blog-area .blog-content .meta-data a:first-child, .single-blog-area .blog-content .meta-data a:hover {
-  color: #ffaf02;
+  color: #333456;
 }
 
 .single-blog-area.blog-style-2 .blog-thumbnail {
@@ -17069,7 +17120,7 @@ textarea:focus {
 
 .blog-section-heading h3 {
   font-size: 30px;
-  border-bottom: 3px solid #ffaf02;
+  border-bottom: 3px solid #333456;
   display: inline-block;
   line-height: 1.5;
 }
@@ -17103,7 +17154,7 @@ textarea:focus {
   color: #4c4656;
   margin-right: 10px;
   display: inline-block;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato Regular", sans-serif;
 }
 
 .single-price-table .p-content img {
@@ -17114,7 +17165,7 @@ textarea:focus {
   margin-bottom: 0;
   color: #27232c;
   font-size: 14px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato Regular", sans-serif;
 }
 
 .single-price-table .p-content p span {
@@ -17179,12 +17230,12 @@ textarea:focus {
 .newsletter-area {
   position: relative;
   z-index: 1;
-  background-color: #3b2b58;
+  background-color: #333456;
   padding: 70px 15px;
 }
 
 .newsletter-area .section-heading h6 {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato Regular", sans-serif;
   line-height: 1.5;
   font-weight: 600;
   color: #292929;
@@ -17249,8 +17300,8 @@ textarea:focus {
   z-index: 10;
   font-size: 14px;
   text-transform: uppercase;
-  color: #ffaf02;
-  font-family: "Open Sans", sans-serif;
+  color: #333456;
+  font-family: "Lato Regular", sans-serif;
   line-height: 1;
   font-weight: 700;
   border: none;
@@ -17281,6 +17332,11 @@ textarea:focus {
   background-color: #232323;
 }
 
+.main-footer-area p {
+  color: white !important;
+  text-align: justify !important;
+}
+
 .main-footer-area .footer-widget .widget-title {
   margin-bottom: 45px;
 }
@@ -17306,7 +17362,7 @@ textarea:focus {
 }
 
 .main-footer-area .footer-widget .footer-social-info a:hover, .main-footer-area .footer-widget .footer-social-info a:focus {
-  color: #ffaf02;
+  color: #333456;
 }
 
 .main-footer-area .footer-widget .single--blog-post {
@@ -17322,12 +17378,12 @@ textarea:focus {
 .main-footer-area .footer-widget .single--blog-post a {
   display: block;
   color: white;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato Regular", sans-serif;
   margin-bottom: 5px;
 }
 
 .main-footer-area .footer-widget .single--blog-post a:hover {
-  color: #ffaf02;
+  color: #333456;
 }
 
 .main-footer-area .footer-widget .single--blog-post a p {
@@ -17337,13 +17393,13 @@ textarea:focus {
 }
 
 .main-footer-area .footer-widget .single--blog-post a p:hover {
-  color: #ffaf02;
+  color: #333456;
 }
 
 .main-footer-area .footer-widget .single--blog-post span {
   margin-bottom: 0;
   font-size: 14px;
-  color: #ffaf02;
+  color: #333456;
 }
 
 .main-footer-area .footer-widget .useful-links li {
@@ -17357,14 +17413,14 @@ textarea:focus {
 
 .main-footer-area .footer-widget .useful-links li a {
   font-size: 14px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato Regular", sans-serif;
   margin-bottom: 15px;
   display: block;
   color: white;
 }
 
 .main-footer-area .footer-widget .useful-links li a:hover, .main-footer-area .footer-widget .useful-links li a:focus {
-  color: #ffaf02;
+  color: #333456;
 }
 
 .bottom-footer-area {
@@ -17376,17 +17432,18 @@ textarea:focus {
 .bottom-footer-area p {
   font-size: 14px;
   margin-bottom: 0;
-  font-family: "Open Sans", sans-serif;
+  color: #fff !important;
+  font-family: "Lato Regular", sans-serif;
 }
 
 .bottom-footer-area p a {
   color: #444;
   font-size: 14px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato Regular", sans-serif;
 }
 
 .bottom-footer-area p a:hover {
-  color: #ffaf02;
+  color: #333456;
 }
 
 /* :: 12.0 Breadcumb Area CSS */
@@ -17470,7 +17527,7 @@ textarea:focus {
 .guideline-content .single-step {
   padding: 35px 20px 30px;
   background-color: #ffffff;
-  border-bottom: 3px solid #3b2b58;
+  border-bottom: 3px solid #333456;
   margin-bottom: 25px;
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
@@ -17489,7 +17546,7 @@ textarea:focus {
   font-size: 36px;
   font-weight: 900;
   line-height: 1;
-  color: #3b2b58;
+  color: #333456;
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
 }
@@ -17560,6 +17617,38 @@ textarea:focus {
   }
 }
 
+.validation {
+  color: red;
+  display: none;
+  margin: 0;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+#sendmessage {
+  color: green;
+  display: none;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+#errormessage {
+  color: red;
+  display: none;
+  border: 1px solid red;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+#sendmessage.show,
+#errormessage.show,
+.show {
+  display: block;
+}
+
 .contact-information .contact-social-info a {
   display: inline-block;
   margin-right: 30px;
@@ -17567,13 +17656,13 @@ textarea:focus {
 }
 
 .contact-information .contact-social-info a:hover {
-  color: #ffaf02;
+  color: #333456;
 }
 
 .contact-information .single-contact-info .contact-icon i {
   display: inline-block;
   color: #ffffff;
-  background-color: #ffaf02;
+  background-color: #333456;
   width: 30px;
   height: 30px;
   text-align: center;
@@ -17602,7 +17691,7 @@ textarea:focus {
 }
 
 .contact-form-area .form-control:focus {
-  border-bottom: 3px solid #ffaf02;
+  border-bottom: 3px solid #333456;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -17637,13 +17726,13 @@ textarea:focus {
 .single-cool-fact h3 {
   font-size: 48px;
   margin-bottom: 0;
-  color: #ffaf02;
+  color: #333456;
 }
 
 .single-cool-fact .line {
   width: 35px;
   height: 5px;
-  background-color: #ffaf02;
+  background-color: #333456;
   margin: 20px auto;
 }
 
@@ -17673,7 +17762,7 @@ textarea:focus {
 
 .single-accordion h6 a {
   border-radius: 0;
-  background-color: #3b2b58;
+  background-color: #333456;
   color: #292929;
   border-bottom: 3px solid #292929;
   display: block;
@@ -17683,7 +17772,7 @@ textarea:focus {
   font-size: 14px;
   text-transform: capitalize;
   font-weight: 600;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato Regular", sans-serif;
 }
 
 .single-accordion h6 a span {
@@ -17703,7 +17792,7 @@ textarea:focus {
 .single-accordion h6 a.collapsed {
   background-color: #eef3f6;
   color: #444;
-  border-bottom: 3px solid #3b2b58;
+  border-bottom: 3px solid #333456;
 }
 
 .single-accordion h6 a.collapsed span.accor-close {
@@ -17743,7 +17832,7 @@ textarea:focus {
 .cryptos-tabs-content .nav-tabs .nav-link {
   background-color: #eef3f6;
   color: #444;
-  border-bottom: 3px solid #3b2b58;
+  border-bottom: 3px solid #333456;
   padding: 0 15px;
   height: 50px;
   line-height: 50px;
@@ -17751,7 +17840,7 @@ textarea:focus {
   border-radius: 0;
   font-size: 14px;
   font-weight: 600;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato Regular", sans-serif;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -17767,7 +17856,7 @@ textarea:focus {
 }
 
 .cryptos-tabs-content .nav-tabs .nav-link.active {
-  background-color: #3b2b58;
+  background-color: #333456;
   color: #292929;
   border-bottom: 3px solid #292929;
 }

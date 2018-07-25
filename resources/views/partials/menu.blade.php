@@ -5,7 +5,7 @@
                     <nav class="classy-navbar justify-content-between" id="cryptosNav">
 
                         <!-- Logo -->
-                        <a class="nav-brand" href="/"><img src="img/logo-lm.png" alt=""></a>
+                        <a class="nav-brand" href="/"><img src="{{asset('img/logo-lm.png')}}" class="img img-responsive"></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -22,16 +22,16 @@
 
                             <!-- Nav Start -->
                             <div class="classynav">
-                                <ul>
+                                <ul class="smooth-scroll ">
                                     <li><a href="/">Inicio</a></li>
-                                    <li><a href="#">Nosotros</a>
-                                        <ul class="dropdown">
-                                            <li><a href="/">Acerca de Nosotros</a></li>
+                                    <li><a href="/nosotros">Nosotros</a>
+                                        <!--<ul class="dropdown">
+                                            <li><a href="nosotros">Sobre Nosotros</a></li>
                                             <li><a href="about-us.html">Vision</a></li>
                                             <li><a href="blog.html">Mision</a></li>
-                                            <li><a href="contact">Clientes</a></li>
+                                            <li><a href="nosotros#clientes">Clientes</a></li>
                                             <li><a href="elements.html">Socios</a></li>
-                                        </ul>
+                                        </ul>-->
                                     </li>
                                     <!--<li><a href="#">Mega Menu</a>
                                         <div class="megamenu">
@@ -67,8 +67,9 @@
                                             </div>
                                         </div>
                                     </li>-->
-                                    <li><a href="servicios">Servicios</a></li>
-                                    <li><a href="contacto">Contacto</a></li>
+                                    <li><a href="/servicios">Servicios</a></li>
+                                    <li><a href="/blog">Blog</a></li>
+                                    <li><a href="/contacto">Contacto</a></li>
                                 </ul>
                             </div>
                             <!-- Nav End -->

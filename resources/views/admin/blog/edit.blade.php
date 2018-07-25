@@ -9,13 +9,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Páginas</h1>
+            <h1>Blog</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-              <li class="breadcrumb-item"><a href="#">Páginas</a></li>
-              <li class="breadcrumb-item active">Agregar</li>
+              <li class="breadcrumb-item"><a href="#">Blog</a></li>
+              <li class="breadcrumb-item active">Editar</li>
             </ol>
           </div>
         </div>
@@ -37,7 +37,7 @@
           <div class="card card-info card-outline">
             <div class="card-header">
               <h3 class="card-title">
-                Nueva página
+                Editar entrada
               </h3>
               <!-- tools box -->
               <div class="card-tools">
@@ -46,50 +46,40 @@
                 data-toggle="tooltip"
                 title="Collapse">
                 <i class="fa fa-minus"></i>
-              </button>
-              <button type="button" class="btn btn-tool btn-sm"
-              data-widget="remove"
-              data-toggle="tooltip"
-              title="Remove">
-              <i class="fa fa-times"></i>
-            </button>
+              </button>          
           </div>
           <!-- /. tools -->
         </div>
         <!-- /.card-header -->
-        <form action="/admin/section/store" method="POST" enctype="multipart/form-data">
+        {!! Form::model($post,['route' => ['update_post', $post], 'method' => 'PUT','enctype' => 'multipart/form-data']) !!}
           {{ csrf_field() }}
           <div class="card-body">
             <div class="form-group">
               <label for="exampleInputTitulo">Título</label>
-              <input type="text" name="title" class="form-control" id="exampleInputTitulo" placeholder="Ingrese un título">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputSubtitulo">Sub título</label>
-              <input type="text" name="subtitle" class="form-control" id="exampleInputSubtitulo" placeholder="Ingrese un subtítulo">
+              {!! Form::text('title', null, ['class' => 'form-control' , 'required' => 'required','placeholder'=>'Ingrese un título']) !!}
             </div>
             <div class="form-group">
               <label for="exampleInputFile">Imagen</label>
               <div class="input-group">
                 <div class="custom-file">
-                  <input type="file" id="exampleInputFile" class="form-control" name="image">                
-                </div>                
+                  {!! Form::file('image', ['class' => 'form-control' ,'placeholder'=>'Escoja un achivo']) !!}                  
+                </div>              
               </div>
             </div>
             <div class="form-group">
               <label>Tipo de página</label>
-              {!! Form::select('section_type_id', $section_types, null, ['class' => 'form-control', 'required' => 'required','placeholder'=>'Elija una opción']) !!}   
+              {!! Form::select('tag_id', $tags, @$selected_tag, ['class' => 'form-control', 'required' => 'required','placeholder'=>'Elija una opción']) !!}              
             </div>                
             <div class="form-group">
               <label for="exampleInputContenido">Contenido</label>
-              <textarea id="editor1" name="content" style="width: 100%;"></textarea>
+              {!! Form::textarea('content',null,['class'=>'form-control', 'rows' => 10,'id'=>'editor1']) !!}
             </div>            
           </div>
           <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
             <a href="{{url('admin/section')}}" class="btn btn-danger">Volver</a>
           </div>
-        </form>
+        {!! Form::close() !!}
       </div>
       <!-- /.card -->
     </div>

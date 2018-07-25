@@ -47,6 +47,14 @@
         </a>
       </li>
       <li class="nav-item">
+        <a href="{{url('/admin/blog')}}" class="nav-link">
+          <i class="nav-icon fa fa-bookmark"></i>
+          <p>
+            Blog
+          </p>
+        </a>
+      </li>      
+      <li class="nav-item">
         <a href="{{url('/admin/user')}}" class="nav-link">
           <i class="nav-icon fa fa-user"></i>
           <p>

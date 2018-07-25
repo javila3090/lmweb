@@ -6,21 +6,9 @@
 <div class="breadcumb-area">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
-            <div class="col-12 col-md-6">
-                <div class="breadcumb-text">
+            <div class="col-12 col-md-12">
+                <div class="breadcumb-text text-center">
                     <h2>{{$services->title}}</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcumb Thumb Area -->
-    <div class="breadcumb-thumb-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="breadcumb-thumb">
-                        <img src="img/bg-img/breadcumb.png" alt="">
-                    </div>
                 </div>
             </div>
         </div>
@@ -34,7 +22,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 col-xs-12">
-                <div class="section-heading text-center mx-auto ">
+                <div class="section-heading text-justify mx-auto ">
                     <p class="color-black">{!!$services->content!!}</p>
                 </div>
             </div>
@@ -48,7 +36,8 @@
                     <i class="{{$v->icon->name}} text-center"></i>
                     @endif
                     <h4 class="text-center" style="text-transform: uppercase;">{!!$v->title!!}</h4>
-                    <hr>
+                    <div class="heading-line"></div>
+                    <br>
                     {!!$v->caption!!}
                 </div>
             </div>
