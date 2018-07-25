@@ -7,6 +7,7 @@
                         <!-- Logo -->
                         <a class="nav-brand" href="/"><img src="{{asset('img/logo-lm.png')}}" class="img img-responsive"></a>
 
+
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
                             <span class="navbarToggler"><span></span><span></span><span></span></span>
@@ -70,6 +71,17 @@
                                     <li><a href="/servicios">Servicios</a></li>
                                     <li><a href="/blog">Blog</a></li>
                                     <li><a href="/contacto">Contacto</a></li>
+                                    @if(\Auth::user())
+                                    <li><a href="/admin">Admin</a></li>
+                                    <li>
+                                        <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        Salir
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                    @endif
                                 </ul>
                             </div>
                             <!-- Nav End -->
