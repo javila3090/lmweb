@@ -15773,6 +15773,11 @@ img {
   max-width: 100%;
 }
 
+.box-shadow {
+  -webkit-box-shadow: 3px 9px 25px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 9px 25px -6px rgba(0, 0, 0, 0.75);
+}
+
 /* Tamaño Fuentes
 ------------------------------------------------------------------ */
 .size-48px {
@@ -16084,6 +16089,11 @@ img {
 .section-padding-100-70 {
   padding-top: 100px;
   padding-bottom: 70px;
+}
+
+.section-padding-100-150 {
+  padding-top: 100px;
+  padding-bottom: 150px;
 }
 
 .section-padding-50-0 {
@@ -16614,7 +16624,7 @@ textarea:focus {
 
 @media only screen and (max-width: 767px) {
   .hero-slides .single-hero-slide {
-    height: 800px;
+    height: 700px;
   }
 }
 
@@ -17872,6 +17882,9 @@ textarea:focus {
   .section-padding-100-0 {
     padding-top: 50px;
     padding-bottom: 0;
+  }
+  .slick-slide {
+    margin: 0 8px;
   }
 }
 

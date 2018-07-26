@@ -4,7 +4,7 @@
  <script type='text/javascript'>var centreGot = false;</script>
  {!! $map['map_js'] !!}
  <!-- ##### Breadcumb Area Start ##### -->
- <div class="breadcumb-area">
+ <div class="breadcumb-area box-shadow">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12 col-md-12">

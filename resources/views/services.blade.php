@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- ##### Breadcumb Area Start ##### -->
-<div class="breadcumb-area">
+<div class="breadcumb-area box-shadow">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12 col-md-12">
@@ -31,7 +31,7 @@
             @foreach($servicesBanner as $v)
             <!-- Single Course Area -->
             <div class="col-12 col-md-6 col-xl-6">
-                <div class="single-feature-area mb-30">
+                <div class="single-feature-area mb-30 box-shadow wow bounceInUp" data-wow-delay="0.3s">
                     @if($v->icon)
                     <i class="{{$v->icon->name}} text-center"></i>
                     @endif

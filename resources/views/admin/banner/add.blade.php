@@ -90,7 +90,7 @@
             </div> 
             <div class="form-group">
               <label>Icono</label>
-              {!! Form::select('icon_id', $icons, null, ['class' => 'form-control', 'required' => 'required','placeholder'=>'Elija una opción']) !!}               
+              {!! Form::select('icon_id', $icons, null, ['class' => 'form-control','placeholder'=>'Elija una opción']) !!}               
             </div>                
             <div class="form-group">
               <label for="exampleInputContenido">Contenido</label>

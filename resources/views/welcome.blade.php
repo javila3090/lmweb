@@ -23,12 +23,12 @@
             @foreach($secondaryBanner as $v)
             <!-- Single Course Area -->
             <div class="col-12 col-md-6 col-xl-3">
-                <div class="single-feature-area mb-30 text-center wow rollIn" style="min-height: 400px;">
+                <div class="single-feature-area mb-30 text-center wow rollIn box-shadow" style="min-height: 400px;">
                     @if($v->icon)
                     <i class="{{$v->icon->name}}"></i>
                     @endif
                     <h4>{!!$v->title!!}</h4>
-                    <br>
+                    <div class="heading-line"></div>
                     <p>{!!$v->caption!!}</p>
                 </div>
             </div>
@@ -142,7 +142,7 @@
 
 <!-- ##### Blog Area Start ##### -->
 @if($clients)
-<section class="cryptos-blog-area section-padding-100">
+<section class="cryptos-blog-area section-padding-100-150">
     <div class="container">
         <div class="row align-items-center">
             <div class="container">

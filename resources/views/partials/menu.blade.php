@@ -24,8 +24,8 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul class="smooth-scroll ">
-                                    <li><a href="/">Inicio</a></li>
-                                    <li><a href="/nosotros">Nosotros</a>
+                                    <li><a href="{{route('home')}}">Inicio</a></li>
+                                    <li><a href="{{route('aboutUs')}}">Nosotros</a>
                                         <!--<ul class="dropdown">
                                             <li><a href="nosotros">Sobre Nosotros</a></li>
                                             <li><a href="about-us.html">Vision</a></li>
@@ -68,11 +68,11 @@
                                             </div>
                                         </div>
                                     </li>-->
-                                    <li><a href="/servicios">Servicios</a></li>
-                                    <li><a href="/blog">Blog</a></li>
-                                    <li><a href="/contacto">Contacto</a></li>
+                                    <li><a href="{{route('services')}}">Servicios</a></li>
+                                    <li><a href="{{route('blog')}}">Notas de interés</a></li>
+                                    <li><a href="{{route('contact')}}">Contacto</a></li>
                                     @if(\Auth::user())
-                                    <li><a href="/admin">Admin</a></li>
+                                    <li><a href="{{url('/admin')}}">Admin</a></li>
                                     <li>
                                         <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         Salir

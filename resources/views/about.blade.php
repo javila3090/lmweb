@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- ##### Breadcumb Area End ##### -->
-<div class="breadcumb-area">
+<div class="breadcumb-area box-shadow">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12 col-md-12">
@@ -29,7 +29,7 @@
             </div>
             <div class="col-12 col-md-6">
                 <div class="about-thumbnail mb-100">
-                    <img src="{{$aboutUs->image}}" class="img img-responsive wow bounceInDown">
+                    <img src="{{$aboutUs->image}}" class="img img-responsive rounded wow bounceInDown box-shadow">
                 </div>
             </div>
         </div>
@@ -70,7 +70,7 @@
             </div>
             <div class="col-12 col-md-6">
                 <div class="video-area wow flipInX">
-                    <img src="{{$vision->image}}" alt="">
+                    <img src="{{$vision->image}}" class="rounded box-shadow">
                 </div>
             </div>
         </div>
@@ -86,6 +86,7 @@
             <div class="container">
                 <div class="section-heading text-center mx-auto">
                     <h3>{{$clients->title}}</h3>
+                    <div class="heading-line"></div>
                 </div>
                 <section class="customer-logos slider">
                     @foreach($clientBanners as $item)
@@ -105,7 +106,8 @@
             <div class="container">
                 <div class="section-heading text-center mx-auto">
                     <h3>{{$partners->title}}</h3>
-                </div>                
+                    <div class="heading-line"></div>
+                </div>
                 <div class="guideline-content">
                     @foreach($partnerBanners as $item)  
                     <div class="col-md-4 col-lg-4 col-lg-offset-4 col-xs-12  wow rollIn">                  
