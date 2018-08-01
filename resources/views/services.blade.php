@@ -22,11 +22,13 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 col-xs-12">
-                <div class="section-heading text-justify mx-auto ">
-                    <p class="color-black">{!!$services->content!!}</p>
+                <div class="text-justify mx-auto ">
+                    <div class="color-black size-18px">{!!$services->content!!}</div>
                 </div>
             </div>
         </div>
+        <br>
+        <br>
         <div class="row">
             @foreach($servicesBanner as $v)
             <!-- Single Course Area -->

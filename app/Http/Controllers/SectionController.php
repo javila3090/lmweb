@@ -71,7 +71,11 @@ class SectionController extends Controller
 			$section = new Section();
 			$section->title = Input::get('title');
 			$section->subtitle = Input::get('subtitle');
-			$section->content = Input::get('content');
+			if(Input::get('content')!="<p>&nbsp;</p>"){
+				$section->content = Input::get('content');
+			}else{
+				$section->content = "";
+			}
 			$section->section_type_id = Input::get('section_type_id');
 			if($file != ""){
 				$section->image = 'uploads/banners/'.$file->getClientOriginalName();
@@ -124,7 +128,11 @@ class SectionController extends Controller
             //Guardamos nombre y nombreOriginal en la BD
 			$section->title = Input::get('title');
 			$section->subtitle = Input::get('subtitle');
-			$section->content = Input::get('content');
+			if(Input::get('content')!="<p>&nbsp;</p>"){
+				$section->content = Input::get('content');
+			}else{
+				$section->content = "";
+			}
 			$section->section_type_id = Input::get('section_type_id');
 			if($file != ""){
 				$section->image = 'uploads/paginas/'.$file->getClientOriginalName();

@@ -10,15 +10,31 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12">
-                <div class="section-heading text-center mx-auto">
-                    <h3>{{$secondary->title}}</h3>
+            <div class="col-12 col-md-12">
+                <div class="section-heading mx-auto">
+                    <h3 class="text-center">{{$secondary->title}}</h3>
                     <div class="heading-line"></div>
-                    <p>{{$secondary->caption}}</p>
                 </div>
             </div>
         </div>
-
+        @if($secondary->content && !$secondary->image)
+        <div class="row">
+            <div class="col-12 col-md-10 offset-md-1 text-justify wow bounceInUp">
+                <div class=" size-18px">{!!$secondary->content!!}</div>
+            </div>
+        </div>
+        @elseif($secondary->content && $secondary->image)
+        <div class="row">
+            <div class="col-12 col-md-6 text-justify wow bounceInLeft">
+                <div class="size-14px">{!!$secondary->content!!}</div>
+            </div>
+            <div class="col-6 col-md-6 text-justify wow bounceInRight">
+                <img src="{{$secondary->image}}" class="img rounded"/>
+            </div>
+        </div>
+        @endif        
+        <br>
+        <br>
         <div class="row">
             @foreach($secondaryBanner as $v)
             <!-- Single Course Area -->
@@ -152,7 +168,7 @@
                 </div>
                 <section class="customer-logos slider">
                     @foreach($clientBanners as $item)
-                        <div class="slide wow lightSpeedIn" data-wow-delay="0.4s"><img src="{{$item->image}}"></div>
+                    <div class="slide wow lightSpeedIn" data-wow-delay="0.4s"><img src="{{$item->image}}"></div>
                     @endforeach
                 </section>
             </div>

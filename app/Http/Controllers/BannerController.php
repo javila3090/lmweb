@@ -74,7 +74,11 @@ class BannerController extends Controller
 			$banner = new Banner();
 			$banner->title = Input::get('title');
 			$banner->subtitle = Input::get('subtitle');
-			$banner->caption = Input::get('caption');
+			if(Input::get('caption')!="<p>&nbsp;</p>"){
+				$banner->caption = Input::get('caption');
+			}else{
+				$banner->caption = "";
+			}
 			$banner->button = Input::get('button');
 			$banner->button_target = Input::get('button_target');
 			$banner->banner_type_id = Input::get('banner_type_id');
@@ -134,7 +138,11 @@ class BannerController extends Controller
             //Guardamos nombre y nombreOriginal en la BD
 			$banner->title = Input::get('title');
 			$banner->subtitle = Input::get('subtitle');
-			$banner->caption = Input::get('caption');
+			if(Input::get('caption')!="<p>&nbsp;</p>"){
+				$banner->caption = Input::get('caption');
+			}else{
+				$banner->caption = "";
+			}
 			$banner->banner_type_id = Input::get('banner_type_id');
 			$banner->button = Input::get('button');
 			$banner->button_target = Input::get('button_target');

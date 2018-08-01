@@ -48,7 +48,7 @@
             <div class="col-12 col-md-6" >
                 <div class="section-heading white wow fadeInLeftBig bg-overlay" data-wow-delay="0.5s" style="padding:10px; background-color: #333456;">
                     <h3 class="mb-4">{{$mission->title}}</h3>
-                    <h5 class="mb-2 text-justify size-30px" style="font-weight: bolder;">{!!$mission->content!!}</h5>
+                    <h5 class="mb-2 text-justify size-14px">{!!$mission->content!!}</h5>
                 </div>
             </div>
         </div>
@@ -102,12 +102,33 @@
 @if($partners)
 <section class="cryptos-blog-area section-padding-50-120">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="container">
-                <div class="section-heading text-center mx-auto">
-                    <h3>{{$partners->title}}</h3>
-                    <div class="heading-line"></div>
+       <div class="row align-items-center">
+            <div class="section-heading text-center mx-auto mb-50">
+                <h3>{{$partners->title}}</h3>
+                <div class="heading-line"></div>
+            </div>
+        </div>
+        @if(!$partners->image)
+           <div class="row">
+                <div class="col-md-10 offset-md-1 text-justify mx-auto">
+                    <div class="size-16px">{!!$partners->content!!}</div>
                 </div>
+            </div>
+        @else
+            <div class="row">
+                <div class="col-12 col-md-4 text-justify mx-auto">
+                    <img src="{{$partners->image}}" class="rounded img-responsive">
+                </div>
+                <div class="col-12 col-md-8 text-justify mx-auto">
+                    <div class="size-14px">{!!$partners->content!!}</div>
+                </div>
+            </div>
+        @endif
+        <br>
+        <br>
+        @if(count($partnerBanners)>0) 
+        <div class="row align-items-center">
+            <div class="container">       
                 <div class="guideline-content">
                     @foreach($partnerBanners as $item)  
                     <div class="col-md-4 col-lg-4 col-lg-offset-4 col-xs-12  wow rollIn">                  
@@ -121,6 +142,7 @@
                 </div>
             </div>
         </div>
+        @endif
     </div>
 </section>
 @endif

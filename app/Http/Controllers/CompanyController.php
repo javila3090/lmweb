@@ -27,7 +27,7 @@ class CompanyController extends Controller
 		$rules = array(
 			'name' => 'required',
 			'phone_1' => 'required',
-            'email_1' => 'required|string|email|max:255',		
+			'email_1' => 'required|string|email|max:255',		
 		);
 
 		$validator = Validator::make(Input::all(), $rules);
@@ -50,14 +50,21 @@ class CompanyController extends Controller
 				$image->save($path.$file->getClientOriginalName());
 			}
             //Guardamos nombre y nombreOriginal en la BD
-            $company = new Company();
+			$company = new Company();
 			$company->name = Input::get('name');
 			$company->phone_1 = Input::get('phone_1');
 			$company->phone_2 = Input::get('phone_2');
 			$company->email_1 = Input::get('email_1');
 			$company->email_2 = Input::get('email_2');
 			$company->address = Input::get('address');
-			$company->review = Input::get('review');
+			$company->facebook = Input::get('facebook');
+			$company->instagram = Input::get('instagram');
+			$company->twitter = Input::get('twitter');
+			if(Input::get('review')!="<p>&nbsp;</p>"){
+				$company->review = Input::get('review');
+			}else{
+				$company->review = "";
+			}			
 			if($file != ""){
 				$company->logo = 'uploads/logo/'.$file->getClientOriginalName();
 			}
@@ -75,7 +82,7 @@ class CompanyController extends Controller
 		$rules = array(
 			'name' => 'required',
 			'phone_1' => 'required',
-            'email_1' => 'required|string|email|max:255',		
+			'email_1' => 'required|string|email|max:255',		
 		);
 
 		$validator = Validator::make(Input::all(), $rules);
@@ -104,7 +111,14 @@ class CompanyController extends Controller
 			$company->email_1 = Input::get('email_1');
 			$company->email_2 = Input::get('email_2');
 			$company->address = Input::get('address');
-			$company->review = Input::get('review');
+			$company->facebook = Input::get('facebook');
+			$company->instagram = Input::get('instagram');
+			$company->twitter = Input::get('twitter');		
+			if(Input::get('review')!="<p>&nbsp;</p>"){
+				$company->review = Input::get('review');
+			}else{
+				$company->review = "";
+			}
 			if($file != ""){
 				$company->logo = 'uploads/logo/'.$file->getClientOriginalName();
 			}

@@ -87,7 +87,11 @@
           <div class="form-group">
             <label for="exampleInputInstagram">Instagram</label>
             {!! Form::text('instagram', null, ['class' => 'form-control','placeholder'=>'Ingrese la información de su instagram']) !!}
-          </div>   
+          </div>
+          <div class="form-group">
+            <label for="exampleInputTwitter">Twitter</label>
+            {!! Form::text('twitter', null, ['class' => 'form-control','placeholder'=>'Ingrese la información de su twitter']) !!}
+          </div> 
           <div class="form-group">
             <label for="exampleInputFile">Logo</label>
             <div class="input-group">
